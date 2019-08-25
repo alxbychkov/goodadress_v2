@@ -17,17 +17,24 @@ gulp.task('sass', function () { // Создаем таск Sass
         .pipe(browserSync.reload({ stream: true })) // Обновляем CSS на странице при изменении
 });
 
+gulp.task('code', function () {
+    return gulp.src('app/*.html')
+        .pipe(browserSync.reload({ stream: true }))
+});
+
 gulp.task('browser-sync', function () { // Создаем таск browser-sync
     browserSync({ // Выполняем browserSync
         server: { // Определяем параметры сервера
             baseDir: 'app' // Директория для сервера - app
         },
+        browser: 'google chrome',
         notify: false // Отключаем уведомления
     });
 });
 
 gulp.task('watch', function () {
     gulp.watch('app/scss/**/*.scss', gulp.parallel('sass')); // Наблюдение за sass файлами
+    gulp.watch('app/*.html', gulp.parallel('code')); // Наблюдение за HTML файлами в корне проекта
 });
 gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch'));
 
