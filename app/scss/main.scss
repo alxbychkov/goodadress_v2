@@ -22,7 +22,8 @@ body {
   font-family: "Cookie";
   font-size: 3em;
 }
-.header {
+.header,
+.footer {
   background: #454545;
   padding: 1em 0;
   .header-top {
@@ -37,6 +38,10 @@ body {
         .email,
         .phone {
           margin: 0.5em 0;
+          transition: 0.5s;
+          &:hover {
+            color: #be4888;
+          }
         }
       }
     }
@@ -45,14 +50,23 @@ body {
     padding: 1em 0;
     .navigation-menu {
       .nav-item {
-        margin-right: 1.5em;
+        margin-right: 1em;
+        color: #e2e0d7;
+        text-transform: uppercase;
+        transition: 0.5s;
+        &:hover {
+          color: #be4888;
+        }
       }
     }
   }
 }
 .main-section {
+  position: relative;
+  margin-bottom: 5em;
   .title {
     text-align: center;
+    color: #444444;
   }
   .slider {
     img {
@@ -61,8 +75,96 @@ body {
       box-shadow: 0.4em 0.4em 1em #000;
     }
   }
+  .contact-form {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    padding: 3em 1em;
+    background: #e2e0d7;
+    box-shadow: 0 0 1em #000;
+    border-radius: 0.7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      color: #444444;
+      text-align: center;
+      font-size: 2em;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .form-callback {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input,
+      button {
+        width: 100%;
+        height: 40px;
+        margin: 0.3em 0;
+        border: none;
+        font-size: 1em;
+      }
+      input {
+        padding: 0.2em 0.7em;
+      }
+      .btn-callback {
+        background: #6abf8e;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          filter: brightness(90%);
+        }
+      }
+    }
+  }
 }
-.section:not(:first-child) {
+.section {
   width: 100%;
-  height: 300px;
+  //   height: 300px;
+  //   margin-top: 4em;
+  .title {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    text-align: center;
+    h2 {
+      display: inline;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-weight: 500;
+      background: #ebebe8;
+      color: #444444;
+      padding: 0 1em;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 2px;
+        background: #444444;
+        top: calc(50% - 2px);
+        left: 0;
+      }
+    }
+  }
+  .content {
+    padding: 2em 0;
+    line-height: 2em;
+  }
+  .content.services {
+    .services-item {
+      margin: 0.3em 0;
+      p {
+        background: #e2e0d7;
+        text-align: center;
+        padding: 0.7em 0;
+        font-weight: 500;
+      }
+    }
+  }
 }
