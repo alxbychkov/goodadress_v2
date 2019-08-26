@@ -22,6 +22,20 @@ body {
   font-family: "Cookie";
   font-size: 3em;
 }
+.button {
+  width: 100%;
+  height: 40px;
+  padding: 0.5em 1em;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1em;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    filter: brightness(90%);
+  }
+}
 .header,
 .footer {
   background: #454545;
@@ -153,7 +167,7 @@ body {
     }
   }
   .content {
-    padding: 2em 0;
+    padding: 4em 0;
     line-height: 2em;
   }
   .content.services {
@@ -164,6 +178,69 @@ body {
         text-align: center;
         padding: 0.7em 0;
         font-weight: 500;
+      }
+    }
+  }
+}
+.tarif-section {
+  .content {
+    justify-content: center;
+    .tarif-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #444444;
+      padding: 15px 15px 15px 15px;
+      margin: 0 1em;
+      box-shadow: 0 0 0.5em #444444;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      .tarif-info {
+        list-style: none;
+        margin-top: 2em;
+        .tarif-info__item {
+          padding-left: 1.9em;
+          margin-bottom: 0.5em;
+          position: relative;
+          &::before {
+            content: "+";
+            width: 0.7em;
+            position: absolute;
+            color: #87b9af;
+            top: 0;
+            bottom: 0;
+            left: -0.3em;
+            margin-left: 0.3em;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .minus::before {
+          content: "-";
+        }
+        .attention::before {
+          content: "!";
+        }
+      }
+      div {
+        width: 100%;
+        text-align: center;
+        margin-top: 1.5em;
+        .tarif__price {
+          color: #be4888;
+          font-size: 1.5em;
+          font-weight: 700;
+        }
+        .tarif__btn {
+          background: #6abf8e;
+          color: #ffffff;
+          margin-top: 1em;
+        }
       }
     }
   }
