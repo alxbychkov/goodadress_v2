@@ -60,6 +60,9 @@ body {
   .button:hover {
     filter: brightness(90%); }
 
+.pink {
+  color: #be4888; }
+
 .header,
 .footer {
   background: #454545;
@@ -178,11 +181,14 @@ body {
     line-height: 2em; }
   .section .content.services .services-item {
     margin: 0.3em 0; }
-    .section .content.services .services-item p {
+    .section .content.services .services-item .services-item__title {
       background: #e2e0d7;
       text-align: center;
       padding: 0.7em 0;
-      font-weight: 500; }
+      font-weight: 500;
+      cursor: pointer; }
+    .section .content.services .services-item .services-item__box {
+      display: none; }
 
 .tarif-section .content {
   justify-content: center; }
@@ -193,7 +199,7 @@ body {
     justify-content: space-between;
     border: 1px solid #444444;
     padding: 15px 15px 15px 15px;
-    margin: 0 1em;
+    margin: 0 1em 1em;
     box-shadow: 0 0 0.5em #444444;
     transition: 0.5s; }
     .tarif-section .content .tarif-item:hover {
