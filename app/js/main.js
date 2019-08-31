@@ -1,11 +1,8 @@
 $(document).ready(function () {
-    $('.services-item').click(function () {
-        console.log($(this).text());
-        if (('.services-item__box').css('display') == 'none') {
-            $(this).find('.services-item__box').slideDown("slow");
-        }
-        else {
-            $(this).find('.services-item__box').slideUp("slow");
-        }
+    $('.services-item__title').click(function () {
+        $(this).next('.services-item__box').slideToggle("slow");
+    });
+    $('.burger').click(function () {
+        $('.navigation-min').slideToggle("slow");
     });
 });

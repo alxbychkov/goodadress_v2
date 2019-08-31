@@ -24,14 +24,28 @@
                         <a href="mailto:nasty@mail.ru" class="email">Nasty@mail.ru</a>
                         <a href="tel:+79261234567" class="phone">+79261234567</a>
                     </div>
+                    <div class="header-top-item__burger burger">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </div>
                 </div>
             </div>
             <nav class="navigation row">
                 <div class="navigation-menu col">
-                    <a href="" class="nav-item">Услуги</a>
-                    <a href="" class="nav-item">Тарифы</a>
+                    <a href="#services" class="nav-item">Услуги</a>
+                    <a href="#tarifs" class="nav-item">Тарифы</a>
                     <a href="" class="nav-item">Адреса</a>
-                    <a href="" class="nav-item">О нас</a>
+                    <a href="#aboutus" class="nav-item">О нас</a>
+                    <a href="" class="nav-item">Контакты</a>
+                </div>
+            </nav>
+            <nav class="navigation-min">
+                <div class="navigation-menu">
+                    <a href="#services" class="nav-item">Услуги</a>
+                    <a href="#tarifs" class="nav-item">Тарифы</a>
+                    <a href="" class="nav-item">Адреса</a>
+                    <a href="#aboutus" class="nav-item">О нас</a>
                     <a href="" class="nav-item">Контакты</a>
                 </div>
             </nav>
@@ -39,27 +53,29 @@
     </header>
     <main class="main">
         <article class="container">
-            <section class="row main-section">
-                <div class="col-8">
-                    <div class="title">
-                        <h1>Юридические адресса в Москве</h1>
-                    </div>
-                    <div class="slider">
-                        <img src="image/back2.jpg" alt="">
-                    </div>
+            <section class="main-section">
+                <div class="title">
+                    <h1>Юридические адресса в Москве</h1>
                 </div>
-                <div class="contact-form col-4">
-                    <p>Нужен юр.адресс?</p>
-                    <p>Оставь заявку</p>
-                    <p>Перезвоним!</p>
-                    <form action="" class="form-callback">
-                        <input type="text" name="name" placeholder="Имя">
-                        <input type="text" name="mail" placeholder="Телефон">
-                        <button class="btn btn-callback">Перезвонить</button>
-                    </form>
+                <div class="row">
+                    <div class="col-lg-8 col-12">
+                        <div class="slider">
+                            <img src="image/back2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="contact-form col-lg-4 col-md-7 col-sm-8 col-11">
+                        <p>Нужен юр.адресс?</p>
+                        <p>Оставь заявку</p>
+                        <p>Перезвоним!</p>
+                        <form action="" class="form-callback">
+                            <input type="text" name="name" placeholder="Имя">
+                            <input type="text" name="mail" placeholder="Телефон">
+                            <button class="btn btn-callback">Перезвонить</button>
+                        </form>
+                    </div>
                 </div>
             </section>
-            <section class="section">
+            <section class="section" id="services">
                 <div class="title">
                     <h2>Услуги</h2>
                 </div>
@@ -176,7 +192,7 @@
                                 продажа юридического адреса.
                             </p>
                             <div class="price-box">
-                                <p>От <span class="pink">3 000 руб</span></p>
+                                <p>От - <span class="pink">3 000 руб</span></p>
                                 <button class="button">Заказать</button>
                             </div>
                         </div>
@@ -184,7 +200,7 @@
                     <!-- </div> -->
                 </div>
             </section>
-            <section class="section tarif-section">
+            <section class="section tarif-section" id="tarifs">
                 <div class="title">
                     <h2>Тарифы</h2>
                 </div>
@@ -245,7 +261,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section">
+            <section class="section" id="aboutus">
                 <div class="title">
                     <h2>О нас</h2>
                 </div>
