@@ -19,4 +19,5 @@ $(document).ready(function () {
             }, 1000);
         }
     });
+    $(".owl-carousel").owlCarousel();
 });
