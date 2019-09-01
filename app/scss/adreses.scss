@@ -1,0 +1,27 @@
+.section-adreses {
+  .adreses {
+    .adreses__head {
+      text-align: center;
+      background: #3d6277;
+      color: #ffffff;
+      padding: 1em 0;
+      margin: 0;
+      border-radius: 0.7em 0.7em 0 0;
+    }
+    .adreses-body {
+      .adreses-body__item {
+        text-align: center;
+        // background: #3d6277;
+        color: #444444;
+        padding: 0.5em 0;
+        margin: 0.3em 0;
+        &:nth-child(2n) {
+          background: #f0f4f7;
+        }
+        &:nth-child(2n + 1) {
+          background: #cbcdce;
+        }
+      }
+    }
+  }
+}
