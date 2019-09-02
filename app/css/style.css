@@ -8,6 +8,10 @@
     padding: 1em 0;
     margin: 0;
     border-radius: 0.7em 0.7em 0 0; }
+    @media screen and (max-width: 576px) {
+      .section-adreses .adreses .adreses__head .okrug,
+      .section-adreses .adreses .adreses__head .ifns {
+        display: none; } }
   .section-adreses .adreses .adreses-body {
     position: relative; }
     .section-adreses .adreses .adreses-body .adreses-body__item {
@@ -18,6 +22,10 @@
       font-size: 0.8em; }
       .section-adreses .adreses .adreses-body .adreses-body__item:nth-child(2n + 1) {
         background: #e2e0d7; }
+      @media screen and (max-width: 576px) {
+        .section-adreses .adreses .adreses-body .adreses-body__item .okrug,
+        .section-adreses .adreses .adreses-body .adreses-body__item .ifns {
+          display: none; } }
       .section-adreses .adreses .adreses-body .adreses-body__item .adres {
         display: flex;
         justify-content: space-between; }
@@ -37,6 +45,8 @@
         .section-adreses .adreses .adreses-body .adreses-body__item .month p button {
           width: 60%;
           height: 32px;
+          padding-left: 0;
+          padding-right: 0;
           background: #6abf8e; }
 
 header {
@@ -75,6 +85,10 @@ header {
     padding: 1em 0;
     margin: 0;
     border-radius: 0.7em 0.7em 0 0; }
+    @media screen and (max-width: 576px) {
+      .section-adreses .adreses .adreses__head .okrug,
+      .section-adreses .adreses .adreses__head .ifns {
+        display: none; } }
   .section-adreses .adreses .adreses-body {
     position: relative; }
     .section-adreses .adreses .adreses-body .adreses-body__item {
@@ -85,6 +99,10 @@ header {
       font-size: 0.8em; }
       .section-adreses .adreses .adreses-body .adreses-body__item:nth-child(2n + 1) {
         background: #e2e0d7; }
+      @media screen and (max-width: 576px) {
+        .section-adreses .adreses .adreses-body .adreses-body__item .okrug,
+        .section-adreses .adreses .adreses-body .adreses-body__item .ifns {
+          display: none; } }
       .section-adreses .adreses .adreses-body .adreses-body__item .adres {
         display: flex;
         justify-content: space-between; }
@@ -104,6 +122,8 @@ header {
         .section-adreses .adreses .adreses-body .adreses-body__item .month p button {
           width: 60%;
           height: 32px;
+          padding-left: 0;
+          padding-right: 0;
           background: #6abf8e; }
 
 * {
