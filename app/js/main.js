@@ -5,6 +5,9 @@ $(document).ready(function () {
     $('.burger').click(function () {
         $('.navigation-min').slideToggle("slow");
     });
+    $(".navigation-min").on("mouseleave", function () {
+        $(this).slideToggle("slow");
+    });
     $(window).resize(function () {
         if ($('.navigation-min').css('display') != 'none') {
             $('.navigation-min').hide();
@@ -19,5 +22,4 @@ $(document).ready(function () {
             }, 1000);
         }
     });
-    $(".owl-carousel").owlCarousel();
 });
