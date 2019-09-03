@@ -1,3 +1,17 @@
+<?php
+include('../php/db_connect.php');
+include('../php/functions.php');
+
+$addresses = [];
+
+$query = 'SELECT `id_ifns`, `id_district`, `address` FROM `addresses`';
+$result = mysqli_query($link, $query);
+while ($item = mysqli_fetch_assoc($result)) {
+    $addresses[] = $item;
+}
+d($addresses);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,21 +89,24 @@
                         </div>
                     </div>
                     <div class="adreses-body">
+                        <?php foreach ($addresses as $key => $value) : ?>
                         <div class="adreses-body__item row">
                             <div class="ifns col-sm-1 col-1">
-                                <p>1</p>
+                                <p><?= $value['id_ifns'] ?></p>
                             </div>
                             <div class="okrug col-sm-2">
-                                <p>ЗАО</p>
+                                <p><?= $value['id_district'] ?></p>
                             </div>
                             <div class="adres col-sm-6 col-6">
                                 <!-- <img src="../adres_img/1.jpg" alt=""> -->
-                                <p>Ул. Пятницкая д. 38</p>
+                                <p><?= $value['address'] ?></p>
                             </div>
                             <div class="month col-sm-3 col-6">
                                 <p><span>От</span><button class="button">12 000</button></p>
                             </div>
                         </div>
+                        <?php endforeach; ?>
+
                         <div class="adreses-body__item row">
                             <div class="ifns col-sm-1 col-1">
                                 <p>1</p>
