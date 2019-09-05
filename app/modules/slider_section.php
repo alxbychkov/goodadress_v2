@@ -4,7 +4,7 @@ include('php/functions.php');
 
 $slide_item = [];
 $error = '';
-$query = 'SELECT `picture_name`, `address`, `price` FROM `addresses`';
+$query = 'SELECT `picture_name`, `address`, `price` FROM `addresses` ORDER BY RAND() LIMIT 10';
 $result = mysqli_query($link, $query);
 if ($result) {
     while ($item = mysqli_fetch_assoc($result)) {

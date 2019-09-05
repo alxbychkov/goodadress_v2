@@ -4,11 +4,12 @@
     </div>
     <div class="content services row">
         <div class="services-item col-12">
-            <p class="services-item__title">
-                Предоставление юридических адресов в Москве: для ООО, для ИП,
-                для
-                ОАО
-            </p>
+            <div class="services-item__title">
+                <p class="services__icon" style="background: url('png/houses.png'); background-size: cover;"></p>
+                <p>
+                    Юридические адреса в Москве для: ООО, ИП, ОАО
+                </p>
+            </div>
             <div class="services-item__box">
                 <p>
                     Несмотря на вносимые в законодательство изменения, одно остается неизменным – для
@@ -28,9 +29,10 @@
             </div>
         </div>
         <div class="services-item  col-md-6 col-12">
-            <p class="services-item__title">
-                Аренда юридического адреса
-            </p>
+            <div class="services-item__title">
+                <p class="services__icon" style="background: url('png/rent.png'); background-size: cover;"></p>
+                <p>Аренда юридического адреса</p>
+            </div>
             <div class="services-item__box">
                 <p>
                     Если Вы воспользуетесь нашей услугой аренды юридического адреса, то получите гарантию
@@ -45,9 +47,10 @@
             </div>
         </div>
         <div class="services-item  col-md-6 col-12">
-            <p class="services-item__title">
-                Смена юридического адреса
-            </p>
+            <div class="services-item__title">
+                <p class="services__icon" style="background: url('png/house.png'); background-size: cover;"></p>
+                <p>Смена юридического адреса</p>
+            </div>
             <div class="services-item__box">
                 <p>
                     В вашей фирме произошли изменения необходимо сменить юридический адрес? Эти изменения
@@ -67,9 +70,10 @@
             </div>
         </div>
         <div class="services-item  col-md-6 col-12">
-            <p class="services-item__title">
-                Почтовое обслуживание
-            </p>
+            <div class="services-item__title">
+                <p class="services__icon" style="background: url('png/mail.png'); background-size: cover;"></p>
+                <p>Почтовое обслуживание</p>
+            </div>
             <div class="services-item__box">
                 <p>
                     Данная услуга представляет собой получение корреспонденции простого и заказного
@@ -90,9 +94,11 @@
             </div>
         </div>
         <div class="services-item  col-md-6 col-12">
-            <p class="services-item__title">
-                Регистрация новой фирмы
-            </p>
+            <div class="services-item__title">
+                <p class="services__icon" style="background: url('png/contract.png'); background-size: cover;">
+                </p>
+                <p>Регистрация новой фирмы</p>
+            </div>
             <div class="services-item__box">
                 <p>
                     Вам необходимо открыть свою фирму: "ООО", "ЗАО", "ОАО"? Наш отдел регистрации фирм и

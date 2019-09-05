@@ -237,8 +237,17 @@ body {
         cursor: pointer;
         box-shadow: 0 0 0.5em #444444;
         transition: 0.5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &:hover {
           transform: translateY(-0.4em);
+        }
+        .services__icon {
+          width: 25px;
+          height: 25px;
+          margin-right: 0.6em;
+          padding: 1em;
         }
       }
       .services-item__box {
