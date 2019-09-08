@@ -22,4 +22,44 @@ $(document).ready(function () {
             }, 1000);
         }
     });
+    $('.form-callback').submit(function (e) {
+        e.preventDefault();
+        let name = $('.form-callback').find('input[name="name"]');
+        let phone = $('.form-callback').find('input[name="phone"]');
+        if ((name.val() != "") && (phone.val() != "") && (name.val().length > 2) && (phone.val().length > 6)) {
+
+            name.css('border', '');
+            phone.css('border', '');
+            $.ajax({
+                url: "/app/php/mail.php",
+                type: "post",
+                data: $(this).serialize(),
+                success: function () {
+                    alert("Ваша заявка принята!");
+                },
+            });
+        } else {
+            if ((name.val() == "") || (name.val().length < 3)) {
+                name.css('border', '1px solid red');
+            } else {
+                name.css('border', '');
+            }
+            if ((phone.val() == "") || (phone.val().length < 7)) {
+                phone.css('border', '1px solid red');
+            } else {
+                phone.css('border', '');
+            }
+            return false;
+        }
+        name.val('');
+        phone.val('');
+    });
+    $('.form-callback').find('input').keyup(function () {
+        if ($(this).val() == "") {
+            $(this).css('border', '1px solid red');
+        } else {
+            $(this).css('border', '');
+        }
+    });
+
 });

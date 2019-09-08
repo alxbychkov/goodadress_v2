@@ -301,7 +301,8 @@ body {
         height: 40px;
         margin: 0.3em 0;
         border: none;
-        font-size: 1em; }
+        font-size: 1em;
+        outline: none; }
       .main-section .contact-form .form-callback input {
         padding: 0.2em 0.7em; }
       .main-section .contact-form .form-callback .btn-callback {
@@ -434,36 +435,50 @@ body {
         color: #ffffff;
         margin-top: 1em; }
 
-.adreses-section .content .slider .slider-item {
-  margin: 0 0.5em; }
-  .adreses-section .content .slider .slider-item a {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5em 1em;
-    height: 300px;
-    box-shadow: 0 0 0.5em #444;
-    position: relative; }
-    .adreses-section .content .slider .slider-item a::after {
-      content: "";
-      background: #444444;
-      opacity: 0.3;
-      position: absolute;
-      width: 100%;
+.adreses-section .content {
+  padding-bottom: 3em; }
+  .adreses-section .content .slider .slider-item {
+    margin: 0 0.5em; }
+    .adreses-section .content .slider .slider-item a {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 1em;
       height: 300px;
-      left: 0;
-      top: 0;
-      transition: 1.2s; }
-    .adreses-section .content .slider .slider-item a:hover::after {
-      opacity: 0; }
-    .adreses-section .content .slider .slider-item a p {
-      width: 100%;
-      text-align: center;
-      background: rgba(61, 98, 119, 0.6); }
-    .adreses-section .content .slider .slider-item a button {
-      background: rgba(61, 98, 119, 0.6);
-      color: white; }
+      box-shadow: 0 0 0.5em #444;
+      position: relative; }
+      .adreses-section .content .slider .slider-item a::after {
+        content: "";
+        background: #444444;
+        opacity: 0.3;
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        left: 0;
+        top: 0;
+        transition: 1.2s; }
+      .adreses-section .content .slider .slider-item a:hover::after {
+        opacity: 0; }
+      .adreses-section .content .slider .slider-item a p {
+        width: 100%;
+        text-align: center;
+        background: rgba(61, 98, 119, 0.6); }
+      .adreses-section .content .slider .slider-item a button {
+        background: rgba(61, 98, 119, 0.6);
+        color: white; }
+
+.adreses-section .section-footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4em; }
+  .adreses-section .section-footer .slider__btn {
+    background: #6abf8e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600; }
 
 .contacts-section .content {
   padding-bottom: 0; }

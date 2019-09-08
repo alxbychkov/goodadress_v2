@@ -4,7 +4,7 @@ include('php/functions.php');
 
 $slide_item = [];
 $error = '';
-$query = 'SELECT `picture_name`, `address`, `price` FROM `addresses` ORDER BY RAND() LIMIT 10';
+$query = 'SELECT `id_folder`, `address`, `price` FROM `addresses` ORDER BY RAND() LIMIT 10';
 $result = mysqli_query($link, $query);
 if ($result) {
     while ($item = mysqli_fetch_assoc($result)) {
@@ -23,14 +23,16 @@ if ($result) {
     <div class="content">
         <div class="owl-carousel slider">
             <?php foreach ($slide_item as $value) : ?>
-            <div class="slider-item">
-                <a href=""
-                    style="background: url(adres_img/<?= $value['picture_name'] ?>); background-size: cover; background-repeat: no-repeat">
-                    <p><?= $value['address']; ?></p>
-                    <button class="button"><?= $value['price']; ?></button>
-                </a>
-            </div>
+                <div class="slider-item">
+                    <a href="" style="background: url(adres_img/<?= $value['id_folder'] . '.jpg'; ?>); background-size: cover; background-repeat: no-repeat">
+                        <p><?= $value['address']; ?></p>
+                        <button class="button"><?= $value['price']; ?></button>
+                    </a>
+                </div>
             <?php endforeach; ?>
         </div>
+    </div>
+    <div class="section-footer">
+        <a href="/app/pages/adreses.php" class="slider__btn button col-sm-6 col-12">Показать еще</a>
     </div>
 </section>

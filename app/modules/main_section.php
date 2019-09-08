@@ -12,9 +12,9 @@
             <p>Нужен юр.адресс?</p>
             <p>Оставь заявку</p>
             <p>Перезвоним!</p>
-            <form action="" class="form-callback">
+            <form class="form-callback">
                 <input type="text" name="name" placeholder="Имя">
-                <input type="text" name="mail" placeholder="Телефон">
+                <input type="text" name="phone" placeholder="Телефон">
                 <button class="btn btn-callback">Перезвонить</button>
             </form>
         </div>

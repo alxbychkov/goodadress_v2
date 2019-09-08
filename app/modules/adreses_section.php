@@ -37,21 +37,21 @@ while ($item = mysqli_fetch_assoc($result)) {
         </div>
         <div class="adreses-body">
             <?php foreach ($addresses as $key => $value) : ?>
-                <div class="adreses-body__item row">
-                    <div class="ifns col-sm-1 col-1">
-                        <p><?= $value['ifns'] ?></p>
-                    </div>
-                    <div class="okrug col-sm-2">
-                        <p><?= $value['district'] ?></p>
-                    </div>
-                    <div class="adres col-sm-6 col-6">
-                        <!-- <img src="../adres_img/1.jpg" alt=""> -->
-                        <p><?= $value['address'] ?></p>
-                    </div>
-                    <div class="month col-sm-3 col-6">
-                        <p><span>От</span><button class="button"><?= $value['price'] ?></button></p>
-                    </div>
+            <div class="adreses-body__item row">
+                <div class="ifns col-sm-1 col-1">
+                    <p><?= $value['ifns'] ?></p>
                 </div>
+                <div class="okrug col-sm-2">
+                    <p><?= $value['district'] ?></p>
+                </div>
+                <div class="adres col-sm-6 col-6">
+                    <!-- <img src="../adres_img/1.jpg" alt=""> -->
+                    <p><?= $value['address'] ?></p>
+                </div>
+                <div class="month col-sm-3 col-6">
+                    <p><span>От</span><button class="button"><?= $value['price'] ?></button></p>
+                </div>
+            </div>
             <?php endforeach; ?>
 
             <div class="adreses-body__item row">

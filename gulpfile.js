@@ -24,9 +24,10 @@ gulp.task('code', function () {
 
 gulp.task('browser-sync', function () { // Создаем таск browser-sync
     browserSync({ // Выполняем browserSync
-        server: { // Определяем параметры сервера
-            baseDir: '' // Директория для сервера - app
-        },
+        // server: { // Определяем параметры сервера
+        //     baseDir: 'app' // Директория для сервера - app
+        // },
+        proxy: '192.168.64.2/app', //директория на xammp
         browser: 'google chrome',
         notify: false // Отключаем уведомления
     });
