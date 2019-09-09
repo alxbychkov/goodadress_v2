@@ -23,12 +23,13 @@ if ($result) {
     <div class="content">
         <div class="owl-carousel slider">
             <?php foreach ($slide_item as $value) : ?>
-                <div class="slider-item">
-                    <a href="" style="background: url(adres_img/<?= $value['id_folder'] . '.jpg'; ?>); background-size: cover; background-repeat: no-repeat">
-                        <p><?= $value['address']; ?></p>
-                        <button class="button"><?= $value['price']; ?></button>
-                    </a>
-                </div>
+            <div class="slider-item">
+                <a href=""
+                    style="background: url(adres_img/<?= $value['id_folder'] . '.jpg'; ?>); background-size: cover; background-repeat: no-repeat">
+                    <p><?= explode(',', $value['address'])[2] . ' ' . explode(',', $value['address'])[3]; ?></p>
+                    <button class="button"><?= $value['price']; ?></button>
+                </a>
+            </div>
             <?php endforeach; ?>
         </div>
     </div>
