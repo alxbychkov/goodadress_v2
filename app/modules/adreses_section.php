@@ -53,23 +53,40 @@ while ($item = mysqli_fetch_assoc($result)) {
                     <p><span>От</span><button class="button"><?= $value['price'] ?></button></p>
                 </div>
             </div>
-            <div class="adreses-body__info row">
+            <!-- <div class="adreses-body__info row">
                 <div class="col-4 info-picture">
                     <img src="/app/adres_img/<?= $key + 1; ?>.jpg" alt=""
                         style="background: url(../adres_img/<?= $key; ?>.jpg )">
                 </div>
-                <!-- <div class="col-2 info-description">
+                <div class="col-2 info-description">
                     <p class="pink"><?= $value['type']; ?></p>
                     <p class="pink"><?= $value['square']; ?></p>
-                </div> -->
+                </div>
                 <div class="col-8 info-description">
                     <span class="pink"><?= $value['type']; ?></span>
                     <span class="pink"><?= '(' . $value['square'] . ')'; ?></span>
                     <p><?= $value['description']; ?></p>
                 </div>
-            </div>
+            </div> -->
             <?php endforeach; ?>
 
+        </div>
+    </div>
+</section>
+<section class="modal-adress">
+    <div class="adress-card">
+        <div class="row">
+            <div class="col-6 image_block">
+                <img src="/app/adres_img/1.jpg" alt="">
+            </div>
+            <div class="col-6 info_block">
+                <p><span>Округ - ВАО</span><span>ИФНС - 1</span></p>
+                <p>ул Пятницкая д. 38</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt quas harum, officia cum, impedit
+                    sint aut vitae explicabo aliquam sed ea reprehenderit doloremque fugit at quam, necessitatibus
+                    deserunt? Voluptas veniam aliquam enim harum ducimus temporibus minus quis omnis alias consequuntur
+                    sapiente magnam dicta commodi, quaerat dolores saepe ut amet nesciunt.</p>
+            </div>
         </div>
     </div>
 </section>

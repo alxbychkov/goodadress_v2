@@ -15,6 +15,7 @@ if ($result) {
 }
 
 
+
 ?>
 <section class="section adreses-section" id="adreses">
     <div class="title">
@@ -25,7 +26,18 @@ if ($result) {
             <?php foreach ($slide_item as $value) : ?>
             <div class="slider-item">
                 <a href=""
-                    style="background: url(adres_img/<?= $value['id_folder'] . '.jpg'; ?>); background-size: cover; background-repeat: no-repeat">
+                    style="background: url(adres_img/<?php
+                                                                    $dir  = $_SERVER['DOCUMENT_ROOT'] . '/app/adres_img/' . $value['id_folder'] . '_ifns';
+                                                                    if (is_dir($dir)) {
+                                                                        $pictures = scandir($dir);
+                                                                        $count = count($pictures);
+                                                                        array_splice($pictures, 0, 1 + $count / 2);
+                                                                        // d($pictures);
+                                                                    } else {
+                                                                        echo 'Папка не существует';
+                                                                    }
+                                                                    echo $value['id_folder'] . '_ifns/' . $pictures[0];
+                                                                    ?>); background-size: cover; background-repeat: no-repeat">
                     <p><?= explode(',', $value['address'])[2] . ' ' . explode(',', $value['address'])[3]; ?></p>
                     <button class="button"><?= $value['price']; ?></button>
                 </a>
