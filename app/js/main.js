@@ -62,4 +62,15 @@ $(document).ready(function () {
         }
     });
 
+    $('.adres_show').click(function () {
+        $.ajax({
+            url: "/app/php/adreses_section.php",
+            type: "post",
+            data: $(this).serialize(),
+            success: function () {
+                alert("Ваша заявка принята!");
+            },
+        });
+    });
+
 });

@@ -4,7 +4,10 @@ include('php/functions.php');
 
 $slide_item = [];
 $error = '';
-$query = 'SELECT `id_folder`, `address`, `price` FROM `addresses` ORDER BY RAND() LIMIT 10';
+$query = 'SELECT `folder`, `address`, `price` 
+            FROM `addresses`
+            JOIN `ifnses` ON `addresses`.`id_folder` = `ifnses`.`id`
+            ORDER BY RAND() LIMIT 10';
 $result = mysqli_query($link, $query);
 if ($result) {
     while ($item = mysqli_fetch_assoc($result)) {
@@ -13,8 +16,6 @@ if ($result) {
 } else {
     $error .= 'Неверный запрос';
 }
-
-
 
 ?>
 <section class="section adreses-section" id="adreses">
@@ -27,16 +28,15 @@ if ($result) {
             <div class="slider-item">
                 <a href=""
                     style="background: url(adres_img/<?php
-                                                                    $dir  = $_SERVER['DOCUMENT_ROOT'] . '/app/adres_img/' . $value['id_folder'] . '_ifns';
+                                                                    $dir  = $_SERVER['DOCUMENT_ROOT'] . '/app/adres_img/' . $value['folder'];
                                                                     if (is_dir($dir)) {
                                                                         $pictures = scandir($dir);
                                                                         $count = count($pictures);
                                                                         array_splice($pictures, 0, 1 + $count / 2);
-                                                                        // d($pictures);
                                                                     } else {
-                                                                        echo 'Папка не существует';
+                                                                        $error .= 'Папка не существует';
                                                                     }
-                                                                    echo $value['id_folder'] . '_ifns/' . $pictures[0];
+                                                                    echo $value['folder'] . '/' . $pictures[0];
                                                                     ?>); background-size: cover; background-repeat: no-repeat">
                     <p><?= explode(',', $value['address'])[2] . ' ' . explode(',', $value['address'])[3]; ?></p>
                     <button class="button"><?= $value['price']; ?></button>
