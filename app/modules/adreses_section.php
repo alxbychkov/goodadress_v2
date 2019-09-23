@@ -4,12 +4,12 @@ include('../php/functions.php');
 
 $addresses = [];
 
-$query = 'SELECT  `addresses`.`id`, `ifns`, `district`, `address`, `price`, `description`, `type`, `square`
+$query = "SELECT  `addresses`.`id`, `ifns`, `district`, `address`, `price`, `description`, `type`, `square`
             FROM `addresses`
             JOIN `typies` ON `addresses`.`id_type` = `typies`.`id`
             JOIN `districts` ON `addresses`.`id_district` = `districts`.`id`
             JOIN `ifnses` ON `addresses`.`id_ifns` = `ifnses`.`id`
-            ORDER BY `id_ifns`';
+            ORDER BY `id_ifns`";
 $result = mysqli_query($link, $query);
 while ($item = mysqli_fetch_assoc($result)) {
     $addresses[] = $item;
@@ -38,38 +38,22 @@ while ($item = mysqli_fetch_assoc($result)) {
         </div>
         <div class="adreses-body">
             <?php foreach ($addresses as $key => $value) : ?>
-                <div class="adreses-body__item row">
-                    <div class="ifns col-sm-1 col-1">
-                        <p><?= $value['ifns'] ?></p>
-                    </div>
-                    <div class="okrug col-sm-2">
-                        <p><?= $value['district'] ?></p>
-                    </div>
-                    <div class="adres col-sm-6 col-6">
-                        <!-- <img src="../adres_img/1.jpg" alt=""> -->
-                        <p><?= explode(',', $value['address'])[2] . ' ' . explode(',', $value['address'])[3]; ?></p>
-                    </div>
-                    <div class="month col-sm-3 col-6">
-                        <p><span>От</span><button class="button adres_show" data-id="<?= $value['id'] ?>"><?= $value['price'] ?></button></p>
-                    </div>
+            <div class="adreses-body__item row">
+                <div class="ifns col-sm-1 col-1">
+                    <p><?= $value['ifns'] ?></p>
                 </div>
-                <!-- <div class="adreses-body__info row">
-                <div class="col-4 info-picture">
-                    <img src="/app/adres_img/<?= $key + 1; ?>.jpg" alt=""
-                        style="background: url(../adres_img/<?= $key; ?>.jpg )">
+                <div class="okrug col-sm-2">
+                    <p><?= $value['district'] ?></p>
                 </div>
-                <div class="col-2 info-description">
-                    <p class="pink"><?= $value['type']; ?></p>
-                    <p class="pink"><?= $value['square']; ?></p>
+                <div class="adres col-sm-6 col-6">
+                    <p><?= explode(',', $value['address'])[2] . ' ' . explode(',', $value['address'])[3]; ?></p>
                 </div>
-                <div class="col-8 info-description">
-                    <span class="pink"><?= $value['type']; ?></span>
-                    <span class="pink"><?= '(' . $value['square'] . ')'; ?></span>
-                    <p><?= $value['description']; ?></p>
+                <div class="month col-sm-3 col-6">
+                    <p><span>От</span><button class="button adres_show"
+                            data-id="<?= $value['id'] ?>"><?= $value['price'] ?></button></p>
                 </div>
-            </div> -->
+            </div>
             <?php endforeach; ?>
-
         </div>
     </div>
 </section>
@@ -87,15 +71,15 @@ while ($item = mysqli_fetch_assoc($result)) {
             </div>
         </div>
         <div class="row adress-card__field">
-            <div class="col-2 ifns">
-                <p><?= $addresses[0]['ifns'] ?><p>
+            <div class="col-2 ifns_ajax">
+                <p id="ifns">
+                    <p>
             </div>
             <div class="col-2 district">
-                <p><?= $addresses[0]['district'] ?></p>
+                <p id="district"></p>
             </div>
             <div class="col-8 adress">
-                <p><?= $addresses[0]['address'] . ' ' . '<span class="pink">' . $addresses[0]['type'] . ' - ' . $addresses[0]['square'] . '</span>' ?>
-                </p>
+                <p id="full-adres"></p>
             </div>
         </div>
         <div class="row adress-card__head">
@@ -105,12 +89,12 @@ while ($item = mysqli_fetch_assoc($result)) {
         </div>
         <div class="row adress-card__field">
             <div class="col-6 image">
-                <img src="../adres_img/1_ifns/Спартаковская_04.jpg" alt="">
+                <img src="" id="image" alt="">
             </div>
             <div class="col-6 discription">
-                <p><?= $addresses[0]['description'] ?></p>
+                <p id="description"></p>
             </div>
         </div>
-        <button class="button"><?= $addresses[0]['price'] ?></button>
+        <button class="button" id="price"></button>
     </div>
 </section>

@@ -62,15 +62,27 @@ $(document).ready(function () {
         }
     });
 
-    $('.adres_show').click(function () {
+    $('button.adres_show').click(function () {
+        $('.modal-adress').fadeIn(300);
+        let id = $(this).data('id');
         $.ajax({
-            url: "/app/php/adreses_section.php",
-            type: "post",
-            data: $(this).serialize(),
-            success: function () {
-                alert("Ваша заявка принята!");
+            url: "/app/php/adres_show.php",
+            method: 'post',
+            dataType: 'json',
+            data: { id: id },
+            success: function (data) {
+                let full_adres = `${data[0].address} <span class="pink"> ${data[0].type} - ${data[0].square} </span>`;
+                let path = '../adres_img/' + data[0].folder + '/' + data[0].picture;
+                $('#ifns').text(data[0].ifns);
+                $('#district').text(data[0].district);
+                $('#full-adres').html(full_adres);
+                $('#description').text(data[0].description);
+                $('#image').attr('src', path);
             },
         });
+    });
+    $('#price').click(function () {
+        $('.modal-adress').fadeOut(300);
     });
 
 });
