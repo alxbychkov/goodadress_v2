@@ -160,10 +160,13 @@
     .adress-card__field {
       .image {
         padding: 0 15px;
-        align-items: flex-start;
+        align-items: center;
         overflow: hidden;
         @media screen and (max-width: 768px) {
           margin-bottom: 0.5em;
+        }
+        .image_wrap {
+          width: 100%;
         }
         img {
           display: block;
@@ -171,6 +174,29 @@
           height: auto;
           max-height: 400px;
           max-width: 100%;
+        }
+        .slick-arrow {
+          position: absolute;
+          top: 50%;
+          z-index: 1;
+          border: none;
+          border-radius: 50%;
+          outline: none;
+          background: transparent;
+          width: 25px;
+          height: 25px;
+          background: url("../png/next.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+          &.slick-next {
+            right: 15px;
+            transform: translateY(-50%);
+          }
+          &.slick-prev {
+            left: 15px;
+            transform: translateY(-50%) rotate(180deg);
+          }
         }
       }
       div.discription {

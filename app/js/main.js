@@ -38,7 +38,6 @@ $(document).ready(function () {
         let name = $('.form-callback').find('input[name="name"]');
         let phone = $('.form-callback').find('input[name="phone"]');
         if ((name.val() != "") && (phone.val() != "") && (name.val().length > 2) && (phone.val().length > 6)) {
-
             name.css('border', '');
             phone.css('border', '');
             $.ajax({
@@ -90,14 +89,19 @@ $(document).ready(function () {
                 $('#full-adres').html(full_adres);
                 $('#description').text(data[0].description);
                 for (let i = 0; i < data[0].picture.length; i++) {
-                    // for (let i = 0; i < 1; i++) {
                     let path = '/app/adres_img/' + data[0].folder + '/' + data[0].picture[i];
-                    $('#img').append(`<div class="image_wrap"><img src="${path}" class="image_img" alt=""></div>`);
+                    $('#img').append(`<div class="image_wrap"><img src="${path}" class="image_img" alt="" data-lazy="${path}"></div>`);
                 }
-                $('#img').addClass('owl-carousel2');
-                $(".owl-carousel2").owlCarousel({
-                    item: 1,
-                    dots: false,
+                $('#img').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: false,
+                    autoplaySpeed: 5000,
+                    arrows: true,
+                    prevArrow: '<button type="button" class="slick-prev"></button>',
+                    nextArrow: '<button type="button" class="slick-next"></button>',
+                    lazyLoad: 'progressive'
                 });
                 $('#price').text(data[0].price);
             },
@@ -105,9 +109,11 @@ $(document).ready(function () {
     });
     $('.close-btn').click(function () {
         $('.modal-adress').fadeOut(300);
+        $('#img').slick('unslick');
     });
     $('.modal-adress').click(function () {
         $(this).fadeOut(300);
+        $('#img').slick('unslick');
     });
     $('.adress-card').click(function (e) {
         e.stopPropagation();
@@ -116,6 +122,7 @@ $(document).ready(function () {
         if ($('.modal-adress').css('display') != 'none') {
             if (e.keyCode === 27) {
                 $('.modal-adress').fadeOut(300);
+                $('#img').slick('unslick');
             }
         }
     });

@@ -123,17 +123,39 @@
           justify-content: center; } }
     .modal-adress .adress-card .adress-card__field .image {
       padding: 0 15px;
-      align-items: flex-start;
+      align-items: center;
       overflow: hidden; }
       @media screen and (max-width: 768px) {
         .modal-adress .adress-card .adress-card__field .image {
           margin-bottom: 0.5em; } }
+      .modal-adress .adress-card .adress-card__field .image .image_wrap {
+        width: 100%; }
       .modal-adress .adress-card .adress-card__field .image img {
         display: block;
         width: 100%;
         height: auto;
         max-height: 400px;
         max-width: 100%; }
+      .modal-adress .adress-card .adress-card__field .image .slick-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        background: transparent;
+        width: 25px;
+        height: 25px;
+        background: url("../png/next.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover; }
+        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-next {
+          right: 15px;
+          transform: translateY(-50%); }
+        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-prev {
+          left: 15px;
+          transform: translateY(-50%) rotate(180deg); }
     .modal-adress .adress-card .adress-card__field div.discription {
       align-items: flex-start; }
       .modal-adress .adress-card .adress-card__field div.discription p {
@@ -305,17 +327,39 @@ header {
           justify-content: center; } }
     .modal-adress .adress-card .adress-card__field .image {
       padding: 0 15px;
-      align-items: flex-start;
+      align-items: center;
       overflow: hidden; }
       @media screen and (max-width: 768px) {
         .modal-adress .adress-card .adress-card__field .image {
           margin-bottom: 0.5em; } }
+      .modal-adress .adress-card .adress-card__field .image .image_wrap {
+        width: 100%; }
       .modal-adress .adress-card .adress-card__field .image img {
         display: block;
         width: 100%;
         height: auto;
         max-height: 400px;
         max-width: 100%; }
+      .modal-adress .adress-card .adress-card__field .image .slick-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        background: transparent;
+        width: 25px;
+        height: 25px;
+        background: url("../png/next.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover; }
+        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-next {
+          right: 15px;
+          transform: translateY(-50%); }
+        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-prev {
+          left: 15px;
+          transform: translateY(-50%) rotate(180deg); }
     .modal-adress .adress-card .adress-card__field div.discription {
       align-items: flex-start; }
       .modal-adress .adress-card .adress-card__field div.discription p {
@@ -422,7 +466,7 @@ body {
             align-items: flex-end; } }
         .header .header-top .header-top-item .header-top-item__burger .burger-line,
         .footer .header-top .header-top-item .header-top-item__burger .burger-line {
-          width: 25px;
+          width: 26px;
           height: 3px;
           background: #ffffff;
           margin: 0.2em 0;
