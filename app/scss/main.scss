@@ -82,6 +82,18 @@ body {
           height: 3px;
           background: #ffffff;
           margin: 0.2em 0;
+          transition: 0.5s;
+        }
+        &.burger_close {
+          .burger-line:nth-of-type(1) {
+            transform: translateY(4.7px) rotate(-45deg);
+          }
+          .burger-line:nth-of-type(2) {
+            display: none;
+          }
+          .burger-line:nth-of-type(3) {
+            transform: translateY(-4.7px) rotate(45deg);
+          }
         }
       }
     }

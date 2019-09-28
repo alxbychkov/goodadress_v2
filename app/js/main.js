@@ -3,14 +3,25 @@ $(document).ready(function () {
         $(this).next('.services-item__box').slideToggle("slow");
     });
     $('.burger').click(function () {
+        if ($(this).hasClass('burger_close')) {
+            $(this).removeClass('burger_close');
+        } else {
+            $(this).addClass('burger_close');
+        }
         $('.navigation-min').slideToggle("slow");
     });
     $(".navigation-min").on("mouseleave", function () {
         $(this).slideToggle("slow");
+        if ($('.burger').hasClass('burger_close')) {
+            $('.burger').removeClass('burger_close');
+        } else {
+            $('.burger').addClass('burger_close');
+        }
     });
     $(window).resize(function () {
         if ($('.navigation-min').css('display') != 'none') {
             $('.navigation-min').hide();
+            $('.burger').removeClass('burger_close');
         }
     });
     $('.nav-item').click(function () {

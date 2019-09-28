@@ -425,7 +425,17 @@ body {
           width: 25px;
           height: 3px;
           background: #ffffff;
-          margin: 0.2em 0; }
+          margin: 0.2em 0;
+          transition: 0.5s; }
+        .header .header-top .header-top-item .header-top-item__burger.burger_close .burger-line:nth-of-type(1),
+        .footer .header-top .header-top-item .header-top-item__burger.burger_close .burger-line:nth-of-type(1) {
+          transform: translateY(4.7px) rotate(-45deg); }
+        .header .header-top .header-top-item .header-top-item__burger.burger_close .burger-line:nth-of-type(2),
+        .footer .header-top .header-top-item .header-top-item__burger.burger_close .burger-line:nth-of-type(2) {
+          display: none; }
+        .header .header-top .header-top-item .header-top-item__burger.burger_close .burger-line:nth-of-type(3),
+        .footer .header-top .header-top-item .header-top-item__burger.burger_close .burger-line:nth-of-type(3) {
+          transform: translateY(-4.7px) rotate(45deg); }
   .header .navigation,
   .footer .navigation {
     padding: 1em 0; }
