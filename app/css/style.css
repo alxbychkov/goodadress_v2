@@ -49,7 +49,9 @@
           height: 32px;
           padding-left: 0;
           padding-right: 0;
-          background: #6abf8e; }
+          background: #6abf8e;
+          color: #ffffff;
+          font-family: "Montserrat", sans-serif; }
     .section-adreses .adreses .adreses-body .adreses-body__info {
       padding: 0.5em 0;
       margin: 0.3em 0;
@@ -78,6 +80,11 @@
     border-radius: 0.7em;
     margin: auto;
     width: 60%; }
+    @media screen and (max-width: 576px) {
+      .modal-adress .adress-card {
+        width: 95%;
+        max-height: 90vh;
+        overflow: auto; } }
     .modal-adress .adress-card .adress-card__head div,
     .modal-adress .adress-card .adress-card__field div {
       display: flex;
@@ -92,27 +99,60 @@
       margin: 0; }
     .modal-adress .adress-card .adress-card__head:nth-of-type(1) {
       border-radius: 0.7em 0.7em 0 0; }
+      @media screen and (max-width: 576px) {
+        .modal-adress .adress-card .adress-card__head:nth-of-type(1) .ifns,
+        .modal-adress .adress-card .adress-card__head:nth-of-type(1) .district {
+          display: none; } }
     .modal-adress .adress-card .adress-card__field {
       text-align: center;
       color: #444444;
       padding: 0.5em 0;
       margin: 0;
       font-size: 1em; }
+      @media screen and (max-width: 576px) {
+        .modal-adress .adress-card .adress-card__field {
+          font-size: 0.85em; } }
+      .modal-adress .adress-card .adress-card__field .adress {
+        text-align: start; }
+      @media screen and (max-width: 768px) {
+        .modal-adress .adress-card .adress-card__field .ifns_ajax {
+          justify-content: flex-start;
+          margin-bottom: 0.5em; } }
+      @media screen and (max-width: 576px) {
+        .modal-adress .adress-card .adress-card__field .ifns_ajax {
+          justify-content: center; } }
     .modal-adress .adress-card .adress-card__field .image {
-      padding: 0; }
+      padding: 0 15px;
+      align-items: flex-start;
+      overflow: hidden; }
+      @media screen and (max-width: 768px) {
+        .modal-adress .adress-card .adress-card__field .image {
+          margin-bottom: 0.5em; } }
       .modal-adress .adress-card .adress-card__field .image img {
         display: block;
         width: 100%;
-        height: auto; }
+        height: auto;
+        max-height: 400px;
+        max-width: 100%; }
     .modal-adress .adress-card .adress-card__field div.discription {
       align-items: flex-start; }
       .modal-adress .adress-card .adress-card__field div.discription p {
-        text-align: start;
-        font-size: 0.85em; }
+        text-align: start; }
     .modal-adress .adress-card button.button {
       background: #3d6277;
       border-radius: 0 0 0.7em 0.7em;
       color: #ffffff; }
+    .modal-adress .adress-card .close-btn {
+      position: absolute;
+      top: 6px;
+      right: 7px;
+      cursor: pointer;
+      background: #ffffff;
+      border-radius: 50%; }
+      .modal-adress .adress-card .close-btn .close {
+        width: 25px;
+        height: 25px;
+        display: block; }
 
 header {
   color: black; }
@@ -191,7 +231,9 @@ header {
           height: 32px;
           padding-left: 0;
           padding-right: 0;
-          background: #6abf8e; }
+          background: #6abf8e;
+          color: #ffffff;
+          font-family: "Montserrat", sans-serif; }
     .section-adreses .adreses .adreses-body .adreses-body__info {
       padding: 0.5em 0;
       margin: 0.3em 0;
@@ -220,6 +262,11 @@ header {
     border-radius: 0.7em;
     margin: auto;
     width: 60%; }
+    @media screen and (max-width: 576px) {
+      .modal-adress .adress-card {
+        width: 95%;
+        max-height: 90vh;
+        overflow: auto; } }
     .modal-adress .adress-card .adress-card__head div,
     .modal-adress .adress-card .adress-card__field div {
       display: flex;
@@ -234,27 +281,60 @@ header {
       margin: 0; }
     .modal-adress .adress-card .adress-card__head:nth-of-type(1) {
       border-radius: 0.7em 0.7em 0 0; }
+      @media screen and (max-width: 576px) {
+        .modal-adress .adress-card .adress-card__head:nth-of-type(1) .ifns,
+        .modal-adress .adress-card .adress-card__head:nth-of-type(1) .district {
+          display: none; } }
     .modal-adress .adress-card .adress-card__field {
       text-align: center;
       color: #444444;
       padding: 0.5em 0;
       margin: 0;
       font-size: 1em; }
+      @media screen and (max-width: 576px) {
+        .modal-adress .adress-card .adress-card__field {
+          font-size: 0.85em; } }
+      .modal-adress .adress-card .adress-card__field .adress {
+        text-align: start; }
+      @media screen and (max-width: 768px) {
+        .modal-adress .adress-card .adress-card__field .ifns_ajax {
+          justify-content: flex-start;
+          margin-bottom: 0.5em; } }
+      @media screen and (max-width: 576px) {
+        .modal-adress .adress-card .adress-card__field .ifns_ajax {
+          justify-content: center; } }
     .modal-adress .adress-card .adress-card__field .image {
-      padding: 0; }
+      padding: 0 15px;
+      align-items: flex-start;
+      overflow: hidden; }
+      @media screen and (max-width: 768px) {
+        .modal-adress .adress-card .adress-card__field .image {
+          margin-bottom: 0.5em; } }
       .modal-adress .adress-card .adress-card__field .image img {
         display: block;
         width: 100%;
-        height: auto; }
+        height: auto;
+        max-height: 400px;
+        max-width: 100%; }
     .modal-adress .adress-card .adress-card__field div.discription {
       align-items: flex-start; }
       .modal-adress .adress-card .adress-card__field div.discription p {
-        text-align: start;
-        font-size: 0.85em; }
+        text-align: start; }
     .modal-adress .adress-card button.button {
       background: #3d6277;
       border-radius: 0 0 0.7em 0.7em;
       color: #ffffff; }
+    .modal-adress .adress-card .close-btn {
+      position: absolute;
+      top: 6px;
+      right: 7px;
+      cursor: pointer;
+      background: #ffffff;
+      border-radius: 50%; }
+      .modal-adress .adress-card .close-btn .close {
+        width: 25px;
+        height: 25px;
+        display: block; }
 
 * {
   margin: 0;

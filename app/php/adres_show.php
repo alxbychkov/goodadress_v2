@@ -26,7 +26,8 @@ if (is_dir($dir)) {
 } else {
     $error .= 'Папка не существует';
 }
-$address[0]['picture'] = $pictures[0];
+$address[0]['picture'] = $pictures;
 
+// d($address);
 // echo json_encode(mysqli_fetch_assoc($result));
 echo json_encode($address);

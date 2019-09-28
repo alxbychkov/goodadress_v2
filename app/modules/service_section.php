@@ -24,7 +24,7 @@
                 <div class="price-box">
                     <p>6 месяцев - <span class="pink"> 10 000 руб</span></p>
                     <p>11 месяцев - <span class="pink"> 13 000 руб</span></p>
-                    <button class="button">Заказать</button>
+                    <!-- <button class="button">Заказать</button> -->
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                 <div class="price-box">
                     <p><span class="pink">10 000 руб</span></p>
                     <p>Срок выполнения - <span>8 дней</span></p>
-                    <button class="button">Заказать</button>
+                    <!-- <button class="button">Заказать</button> -->
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
                 </p>
                 <div class="price-box">
                     <p>1 месяц - <span class="pink"> 1 000 руб</span></p>
-                    <button class="button">Заказать</button>
+                    <!-- <button class="button">Заказать</button> -->
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@
                 </p>
                 <div class="price-box">
                     <p>От - <span class="pink">3 000 руб</span></p>
-                    <button class="button">Заказать</button>
+                    <!-- <button class="button">Заказать</button> -->
                 </div>
             </div>
         </div>

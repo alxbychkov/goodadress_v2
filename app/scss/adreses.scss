@@ -62,6 +62,8 @@
               padding-left: 0;
               padding-right: 0;
               background: #6abf8e;
+              color: #ffffff;
+              font-family: "Montserrat", sans-serif;
             }
           }
         }
@@ -103,6 +105,11 @@
     border-radius: 0.7em;
     margin: auto;
     width: 60%;
+    @media screen and (max-width: 576px) {
+      width: 95%;
+      max-height: 90vh;
+      overflow: auto;
+    }
     .adress-card__head,
     .adress-card__field {
       div {
@@ -121,6 +128,12 @@
     }
     .adress-card__head:nth-of-type(1) {
       border-radius: 0.7em 0.7em 0 0;
+      .ifns,
+      .district {
+        @media screen and (max-width: 576px) {
+          display: none;
+        }
+      }
     }
     .adress-card__field {
       text-align: center;
@@ -128,21 +141,42 @@
       padding: 0.5em 0;
       margin: 0;
       font-size: 1em;
+      @media screen and (max-width: 576px) {
+        font-size: 0.85em;
+      }
+      .adress {
+        text-align: start;
+      }
+      .ifns_ajax {
+        @media screen and (max-width: 768px) {
+          justify-content: flex-start;
+          margin-bottom: 0.5em;
+        }
+        @media screen and (max-width: 576px) {
+          justify-content: center;
+        }
+      }
     }
     .adress-card__field {
       .image {
-        padding: 0;
+        padding: 0 15px;
+        align-items: flex-start;
+        overflow: hidden;
+        @media screen and (max-width: 768px) {
+          margin-bottom: 0.5em;
+        }
         img {
           display: block;
           width: 100%;
           height: auto;
+          max-height: 400px;
+          max-width: 100%;
         }
       }
       div.discription {
         align-items: flex-start;
         p {
           text-align: start;
-          font-size: 0.85em;
         }
       }
     }
@@ -150,6 +184,19 @@
       background: #3d6277;
       border-radius: 0 0 0.7em 0.7em;
       color: #ffffff;
+    }
+    .close-btn {
+      position: absolute;
+      top: 6px;
+      right: 7px;
+      cursor: pointer;
+      background: #ffffff;
+      border-radius: 50%;
+      .close {
+        width: 25px;
+        height: 25px;
+        display: block;
+      }
     }
   }
 }

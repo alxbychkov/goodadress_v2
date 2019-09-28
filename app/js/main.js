@@ -62,7 +62,9 @@ $(document).ready(function () {
         }
     });
 
-    $('button.adres_show').click(function () {
+    $('[data-open=adres_show]').click(function () {
+        $('#img').empty();
+        // $('#img').removeClass('owl-carousel2');
         $('.modal-adress').fadeIn(300);
         let id = $(this).data('id');
         $.ajax({
@@ -72,17 +74,39 @@ $(document).ready(function () {
             data: { id: id },
             success: function (data) {
                 let full_adres = `${data[0].address} <span class="pink"> ${data[0].type} - ${data[0].square} </span>`;
-                let path = '../adres_img/' + data[0].folder + '/' + data[0].picture;
                 $('#ifns').text(data[0].ifns);
                 $('#district').text(data[0].district);
                 $('#full-adres').html(full_adres);
                 $('#description').text(data[0].description);
-                $('#image').attr('src', path);
+                for (let i = 0; i < data[0].picture.length; i++) {
+                    // for (let i = 0; i < 1; i++) {
+                    let path = '/app/adres_img/' + data[0].folder + '/' + data[0].picture[i];
+                    $('#img').append(`<div class="image_wrap"><img src="${path}" class="image_img" alt=""></div>`);
+                }
+                $('#img').addClass('owl-carousel2');
+                $(".owl-carousel2").owlCarousel({
+                    item: 1,
+                    dots: false,
+                });
+                $('#price').text(data[0].price);
             },
         });
     });
-    $('#price').click(function () {
+    $('.close-btn').click(function () {
         $('.modal-adress').fadeOut(300);
+    });
+    $('.modal-adress').click(function () {
+        $(this).fadeOut(300);
+    });
+    $('.adress-card').click(function (e) {
+        e.stopPropagation();
+    });
+    $(document).keyup(function (e) {
+        if ($('.modal-adress').css('display') != 'none') {
+            if (e.keyCode === 27) {
+                $('.modal-adress').fadeOut(300);
+            }
+        }
     });
 
 });
