@@ -711,7 +711,8 @@ body {
       padding: 0.5em 1em;
       height: 300px;
       box-shadow: 0 0 0.5em #444;
-      position: relative; }
+      position: relative;
+      cursor: pointer; }
       .adreses-section .content .slider .slider-item a::after {
         content: "";
         background: #444444;

@@ -372,6 +372,7 @@ body {
           height: 300px;
           box-shadow: 0 0 0.5em #444;
           position: relative;
+          cursor: pointer;
           &::after {
             content: "";
             background: rgb(68, 68, 68);

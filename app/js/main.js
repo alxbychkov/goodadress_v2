@@ -92,20 +92,33 @@ $(document).ready(function () {
                     let path = '/app/adres_img/' + data[0].folder + '/' + data[0].picture[i];
                     $('#img').append(`<div class="image_wrap"><img src="${path}" class="image_img" alt="" data-lazy="${path}"></div>`);
                 }
-                $('#img').slick({
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 5000,
-                    arrows: true,
-                    prevArrow: '<button type="button" class="slick-prev"></button>',
-                    nextArrow: '<button type="button" class="slick-next"></button>',
-                    lazyLoad: 'progressive'
-                });
+                // $('#img').slick({
+                //     infinite: true,
+                //     slidesToShow: 1,
+                //     slidesToScroll: 1,
+                //     autoplay: false,
+                //     autoplaySpeed: 5000,
+                //     arrows: true,
+                //     prevArrow: '<button type="button" class="slick-prev"></button>',
+                //     nextArrow: '<button type="button" class="slick-next"></button>',
+                //     lazyLoad: 'progressive'
+                // });
                 $('#price').text(data[0].price);
+                $('#img').slick('setPosition');
+                $('#img').slick('init');
             },
         });
+    });
+    $('#img').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 5000,
+        arrows: true,
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next"></button>',
+        lazyLoad: 'progressive'
     });
     $('.close-btn').click(function () {
         $('.modal-adress').fadeOut(300);
