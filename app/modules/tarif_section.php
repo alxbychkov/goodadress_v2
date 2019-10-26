@@ -9,8 +9,8 @@
                 <li class="tarif-info__item">
                     Подготовка документации для подачи в ФНС
                 </li>
-                <li class="tarif-info__item minus">
-                    Консультация специалиста
+                <li class="tarif-info__item">
+                    Консультация юриста
                 </li>
                 <li class="tarif-info__item attention">
                     Подача документов самостоятельно
@@ -18,7 +18,7 @@
             </ul>
             <div class="">
                 <p class="tarif__price">3 000 rub</p>
-                <button class="tarif__btn button">Заказать</button>
+                <button class="tarif__btn button" data-tarif="МИНИ">Заказать</button>
             </div>
         </div>
         <div class="tarif-item col-lg-3 col-md-5 col-10">
@@ -28,15 +28,15 @@
                     Подготовка документации для подачи в ФНС
                 </li>
                 <li class="tarif-info__item">
-                    Консультация специалиста
+                    Консультация юриста
                 </li>
                 <li class="tarif-info__item">
-                    Подача документов в сопровождении юриста
+                    Подача документов в сопровождении специалиста
                 </li>
             </ul>
             <div>
                 <p class="tarif__price">6 000 rub</p>
-                <button class="tarif__btn button">Заказать</button>
+                <button class="tarif__btn button" data-tarif="ОПТИМАЛ">Заказать</button>
             </div>
         </div>
         <div class="tarif-item col-lg-3 col-md-5 col-10">
@@ -46,7 +46,7 @@
                     Подготовка документации для подачи в ФНС
                 </li>
                 <li class="tarif-info__item">
-                    Консультация специалиста
+                    Консультация юриста
                 </li>
                 <li class="tarif-info__item">
                     Подача документов по доверенности
@@ -54,8 +54,10 @@
             </ul>
             <div>
                 <p class="tarif__price">9 000 rub</p>
-                <button class="tarif__btn button">Заказать</button>
+                <button class="tarif__btn button" data-tarif="МАКСИ">Заказать</button>
             </div>
         </div>
     </div>
 </section>
+<?php
+include('modules/callback_section.php');

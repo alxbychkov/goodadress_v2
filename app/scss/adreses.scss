@@ -87,7 +87,8 @@
     }
   }
 }
-.modal-adress {
+.modal-adress,
+.callback-modal {
   display: none;
   position: fixed;
   z-index: 99;
@@ -96,7 +97,8 @@
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.3);
-  .adress-card {
+  .adress-card,
+  .callback-form {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -171,6 +173,7 @@
         img {
           display: block;
           width: 100%;
+          width: initial;
           height: auto;
           max-height: 400px;
           max-width: 100%;
@@ -206,10 +209,30 @@
         }
       }
     }
-    button.button {
-      background: #3d6277;
-      border-radius: 0 0 0.7em 0.7em;
-      color: #ffffff;
+    .modal_form {
+      text-align: center;
+      input {
+        display: inline-block;
+        // background: #e2e0d7;
+        background: none;
+        width: 49%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid #6abf8e;
+        font-size: 1em;
+        outline: none;
+        padding: 0.2em 0.7em;
+        @media screen and (max-width: 414px) {
+          width: 95%;
+          margin-top: 0.2rem;
+        }
+      }
+      button.button {
+        background: #3d6277;
+        border-radius: 0 0 0.7em 0.7em;
+        color: #ffffff;
+        margin-top: 0.2rem;
+      }
     }
     .close-btn {
       position: absolute;
@@ -223,6 +246,17 @@
         height: 25px;
         display: block;
       }
+    }
+  }
+}
+.callback-modal {
+  .callback-form {
+    padding: 0.5rem;
+    width: 400px;
+    @media screen and (max-width: 576px) {
+      width: 95%;
+      max-height: 90vh;
+      overflow: auto;
     }
   }
 }

@@ -62,7 +62,8 @@
       .section-adreses .adreses .adreses-body .adreses-body__info .info-description p {
         font-size: 0.8em; }
 
-.modal-adress {
+.modal-adress,
+.callback-modal {
   display: none;
   position: fixed;
   z-index: 99;
@@ -71,7 +72,10 @@
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.3); }
-  .modal-adress .adress-card {
+  .modal-adress .adress-card,
+  .modal-adress .callback-form,
+  .callback-modal .adress-card,
+  .callback-modal .callback-form {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -81,62 +85,114 @@
     margin: auto;
     width: 60%; }
     @media screen and (max-width: 576px) {
-      .modal-adress .adress-card {
+      .modal-adress .adress-card,
+      .modal-adress .callback-form,
+      .callback-modal .adress-card,
+      .callback-modal .callback-form {
         width: 95%;
         max-height: 90vh;
         overflow: auto; } }
     .modal-adress .adress-card .adress-card__head div,
-    .modal-adress .adress-card .adress-card__field div {
+    .modal-adress .adress-card .adress-card__field div,
+    .modal-adress .callback-form .adress-card__head div,
+    .modal-adress .callback-form .adress-card__field div,
+    .callback-modal .adress-card .adress-card__head div,
+    .callback-modal .adress-card .adress-card__field div,
+    .callback-modal .callback-form .adress-card__head div,
+    .callback-modal .callback-form .adress-card__field div {
       display: flex;
       justify-content: center;
       align-items: center; }
-    .modal-adress .adress-card .adress-card__head {
+    .modal-adress .adress-card .adress-card__head,
+    .modal-adress .callback-form .adress-card__head,
+    .callback-modal .adress-card .adress-card__head,
+    .callback-modal .callback-form .adress-card__head {
       font-size: 1.1em;
       text-align: center;
       background: #3d6277;
       color: #ffffff;
       padding: 0.5em 0;
       margin: 0; }
-    .modal-adress .adress-card .adress-card__head:nth-of-type(1) {
+    .modal-adress .adress-card .adress-card__head:nth-of-type(1),
+    .modal-adress .callback-form .adress-card__head:nth-of-type(1),
+    .callback-modal .adress-card .adress-card__head:nth-of-type(1),
+    .callback-modal .callback-form .adress-card__head:nth-of-type(1) {
       border-radius: 0.7em 0.7em 0 0; }
       @media screen and (max-width: 576px) {
         .modal-adress .adress-card .adress-card__head:nth-of-type(1) .ifns,
-        .modal-adress .adress-card .adress-card__head:nth-of-type(1) .district {
+        .modal-adress .adress-card .adress-card__head:nth-of-type(1) .district,
+        .modal-adress .callback-form .adress-card__head:nth-of-type(1) .ifns,
+        .modal-adress .callback-form .adress-card__head:nth-of-type(1) .district,
+        .callback-modal .adress-card .adress-card__head:nth-of-type(1) .ifns,
+        .callback-modal .adress-card .adress-card__head:nth-of-type(1) .district,
+        .callback-modal .callback-form .adress-card__head:nth-of-type(1) .ifns,
+        .callback-modal .callback-form .adress-card__head:nth-of-type(1) .district {
           display: none; } }
-    .modal-adress .adress-card .adress-card__field {
+    .modal-adress .adress-card .adress-card__field,
+    .modal-adress .callback-form .adress-card__field,
+    .callback-modal .adress-card .adress-card__field,
+    .callback-modal .callback-form .adress-card__field {
       text-align: center;
       color: #444444;
       padding: 0.5em 0;
       margin: 0;
       font-size: 1em; }
       @media screen and (max-width: 576px) {
-        .modal-adress .adress-card .adress-card__field {
+        .modal-adress .adress-card .adress-card__field,
+        .modal-adress .callback-form .adress-card__field,
+        .callback-modal .adress-card .adress-card__field,
+        .callback-modal .callback-form .adress-card__field {
           font-size: 0.85em; } }
-      .modal-adress .adress-card .adress-card__field .adress {
+      .modal-adress .adress-card .adress-card__field .adress,
+      .modal-adress .callback-form .adress-card__field .adress,
+      .callback-modal .adress-card .adress-card__field .adress,
+      .callback-modal .callback-form .adress-card__field .adress {
         text-align: start; }
       @media screen and (max-width: 768px) {
-        .modal-adress .adress-card .adress-card__field .ifns_ajax {
+        .modal-adress .adress-card .adress-card__field .ifns_ajax,
+        .modal-adress .callback-form .adress-card__field .ifns_ajax,
+        .callback-modal .adress-card .adress-card__field .ifns_ajax,
+        .callback-modal .callback-form .adress-card__field .ifns_ajax {
           justify-content: flex-start;
           margin-bottom: 0.5em; } }
       @media screen and (max-width: 576px) {
-        .modal-adress .adress-card .adress-card__field .ifns_ajax {
+        .modal-adress .adress-card .adress-card__field .ifns_ajax,
+        .modal-adress .callback-form .adress-card__field .ifns_ajax,
+        .callback-modal .adress-card .adress-card__field .ifns_ajax,
+        .callback-modal .callback-form .adress-card__field .ifns_ajax {
           justify-content: center; } }
-    .modal-adress .adress-card .adress-card__field .image {
+    .modal-adress .adress-card .adress-card__field .image,
+    .modal-adress .callback-form .adress-card__field .image,
+    .callback-modal .adress-card .adress-card__field .image,
+    .callback-modal .callback-form .adress-card__field .image {
       padding: 0 15px;
       align-items: center;
       overflow: hidden; }
       @media screen and (max-width: 768px) {
-        .modal-adress .adress-card .adress-card__field .image {
+        .modal-adress .adress-card .adress-card__field .image,
+        .modal-adress .callback-form .adress-card__field .image,
+        .callback-modal .adress-card .adress-card__field .image,
+        .callback-modal .callback-form .adress-card__field .image {
           margin-bottom: 0.5em; } }
-      .modal-adress .adress-card .adress-card__field .image .image_wrap {
+      .modal-adress .adress-card .adress-card__field .image .image_wrap,
+      .modal-adress .callback-form .adress-card__field .image .image_wrap,
+      .callback-modal .adress-card .adress-card__field .image .image_wrap,
+      .callback-modal .callback-form .adress-card__field .image .image_wrap {
         width: 100%; }
-      .modal-adress .adress-card .adress-card__field .image img {
+      .modal-adress .adress-card .adress-card__field .image img,
+      .modal-adress .callback-form .adress-card__field .image img,
+      .callback-modal .adress-card .adress-card__field .image img,
+      .callback-modal .callback-form .adress-card__field .image img {
         display: block;
         width: 100%;
+        width: initial;
         height: auto;
         max-height: 400px;
         max-width: 100%; }
-      .modal-adress .adress-card .adress-card__field .image .slick-arrow {
+      .modal-adress .adress-card .adress-card__field .image .slick-arrow,
+      .modal-adress .callback-form .adress-card__field .image .slick-arrow,
+      .callback-modal .adress-card .adress-card__field .image .slick-arrow,
+      .callback-modal .callback-form .adress-card__field .image .slick-arrow {
         position: absolute;
         top: 50%;
         z-index: 1;
@@ -150,31 +206,87 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover; }
-        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-next {
+        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-next,
+        .modal-adress .callback-form .adress-card__field .image .slick-arrow.slick-next,
+        .callback-modal .adress-card .adress-card__field .image .slick-arrow.slick-next,
+        .callback-modal .callback-form .adress-card__field .image .slick-arrow.slick-next {
           right: 15px;
           transform: translateY(-50%); }
-        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-prev {
+        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-prev,
+        .modal-adress .callback-form .adress-card__field .image .slick-arrow.slick-prev,
+        .callback-modal .adress-card .adress-card__field .image .slick-arrow.slick-prev,
+        .callback-modal .callback-form .adress-card__field .image .slick-arrow.slick-prev {
           left: 15px;
           transform: translateY(-50%) rotate(180deg); }
-    .modal-adress .adress-card .adress-card__field div.discription {
+    .modal-adress .adress-card .adress-card__field div.discription,
+    .modal-adress .callback-form .adress-card__field div.discription,
+    .callback-modal .adress-card .adress-card__field div.discription,
+    .callback-modal .callback-form .adress-card__field div.discription {
       align-items: flex-start; }
-      .modal-adress .adress-card .adress-card__field div.discription p {
+      .modal-adress .adress-card .adress-card__field div.discription p,
+      .modal-adress .callback-form .adress-card__field div.discription p,
+      .callback-modal .adress-card .adress-card__field div.discription p,
+      .callback-modal .callback-form .adress-card__field div.discription p {
         text-align: start; }
-    .modal-adress .adress-card button.button {
-      background: #3d6277;
-      border-radius: 0 0 0.7em 0.7em;
-      color: #ffffff; }
-    .modal-adress .adress-card .close-btn {
+    .modal-adress .adress-card .modal_form,
+    .modal-adress .callback-form .modal_form,
+    .callback-modal .adress-card .modal_form,
+    .callback-modal .callback-form .modal_form {
+      text-align: center; }
+      .modal-adress .adress-card .modal_form input,
+      .modal-adress .callback-form .modal_form input,
+      .callback-modal .adress-card .modal_form input,
+      .callback-modal .callback-form .modal_form input {
+        display: inline-block;
+        background: none;
+        width: 49%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid #6abf8e;
+        font-size: 1em;
+        outline: none;
+        padding: 0.2em 0.7em; }
+        @media screen and (max-width: 414px) {
+          .modal-adress .adress-card .modal_form input,
+          .modal-adress .callback-form .modal_form input,
+          .callback-modal .adress-card .modal_form input,
+          .callback-modal .callback-form .modal_form input {
+            width: 95%;
+            margin-top: 0.2rem; } }
+      .modal-adress .adress-card .modal_form button.button,
+      .modal-adress .callback-form .modal_form button.button,
+      .callback-modal .adress-card .modal_form button.button,
+      .callback-modal .callback-form .modal_form button.button {
+        background: #3d6277;
+        border-radius: 0 0 0.7em 0.7em;
+        color: #ffffff;
+        margin-top: 0.2rem; }
+    .modal-adress .adress-card .close-btn,
+    .modal-adress .callback-form .close-btn,
+    .callback-modal .adress-card .close-btn,
+    .callback-modal .callback-form .close-btn {
       position: absolute;
       top: 6px;
       right: 7px;
       cursor: pointer;
       background: #ffffff;
       border-radius: 50%; }
-      .modal-adress .adress-card .close-btn .close {
+      .modal-adress .adress-card .close-btn .close,
+      .modal-adress .callback-form .close-btn .close,
+      .callback-modal .adress-card .close-btn .close,
+      .callback-modal .callback-form .close-btn .close {
         width: 25px;
         height: 25px;
         display: block; }
+
+.callback-modal .callback-form {
+  padding: 0.5rem;
+  width: 400px; }
+  @media screen and (max-width: 576px) {
+    .callback-modal .callback-form {
+      width: 95%;
+      max-height: 90vh;
+      overflow: auto; } }
 
 header {
   color: black; }
@@ -266,7 +378,8 @@ header {
       .section-adreses .adreses .adreses-body .adreses-body__info .info-description p {
         font-size: 0.8em; }
 
-.modal-adress {
+.modal-adress,
+.callback-modal {
   display: none;
   position: fixed;
   z-index: 99;
@@ -275,7 +388,10 @@ header {
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.3); }
-  .modal-adress .adress-card {
+  .modal-adress .adress-card,
+  .modal-adress .callback-form,
+  .callback-modal .adress-card,
+  .callback-modal .callback-form {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -285,62 +401,114 @@ header {
     margin: auto;
     width: 60%; }
     @media screen and (max-width: 576px) {
-      .modal-adress .adress-card {
+      .modal-adress .adress-card,
+      .modal-adress .callback-form,
+      .callback-modal .adress-card,
+      .callback-modal .callback-form {
         width: 95%;
         max-height: 90vh;
         overflow: auto; } }
     .modal-adress .adress-card .adress-card__head div,
-    .modal-adress .adress-card .adress-card__field div {
+    .modal-adress .adress-card .adress-card__field div,
+    .modal-adress .callback-form .adress-card__head div,
+    .modal-adress .callback-form .adress-card__field div,
+    .callback-modal .adress-card .adress-card__head div,
+    .callback-modal .adress-card .adress-card__field div,
+    .callback-modal .callback-form .adress-card__head div,
+    .callback-modal .callback-form .adress-card__field div {
       display: flex;
       justify-content: center;
       align-items: center; }
-    .modal-adress .adress-card .adress-card__head {
+    .modal-adress .adress-card .adress-card__head,
+    .modal-adress .callback-form .adress-card__head,
+    .callback-modal .adress-card .adress-card__head,
+    .callback-modal .callback-form .adress-card__head {
       font-size: 1.1em;
       text-align: center;
       background: #3d6277;
       color: #ffffff;
       padding: 0.5em 0;
       margin: 0; }
-    .modal-adress .adress-card .adress-card__head:nth-of-type(1) {
+    .modal-adress .adress-card .adress-card__head:nth-of-type(1),
+    .modal-adress .callback-form .adress-card__head:nth-of-type(1),
+    .callback-modal .adress-card .adress-card__head:nth-of-type(1),
+    .callback-modal .callback-form .adress-card__head:nth-of-type(1) {
       border-radius: 0.7em 0.7em 0 0; }
       @media screen and (max-width: 576px) {
         .modal-adress .adress-card .adress-card__head:nth-of-type(1) .ifns,
-        .modal-adress .adress-card .adress-card__head:nth-of-type(1) .district {
+        .modal-adress .adress-card .adress-card__head:nth-of-type(1) .district,
+        .modal-adress .callback-form .adress-card__head:nth-of-type(1) .ifns,
+        .modal-adress .callback-form .adress-card__head:nth-of-type(1) .district,
+        .callback-modal .adress-card .adress-card__head:nth-of-type(1) .ifns,
+        .callback-modal .adress-card .adress-card__head:nth-of-type(1) .district,
+        .callback-modal .callback-form .adress-card__head:nth-of-type(1) .ifns,
+        .callback-modal .callback-form .adress-card__head:nth-of-type(1) .district {
           display: none; } }
-    .modal-adress .adress-card .adress-card__field {
+    .modal-adress .adress-card .adress-card__field,
+    .modal-adress .callback-form .adress-card__field,
+    .callback-modal .adress-card .adress-card__field,
+    .callback-modal .callback-form .adress-card__field {
       text-align: center;
       color: #444444;
       padding: 0.5em 0;
       margin: 0;
       font-size: 1em; }
       @media screen and (max-width: 576px) {
-        .modal-adress .adress-card .adress-card__field {
+        .modal-adress .adress-card .adress-card__field,
+        .modal-adress .callback-form .adress-card__field,
+        .callback-modal .adress-card .adress-card__field,
+        .callback-modal .callback-form .adress-card__field {
           font-size: 0.85em; } }
-      .modal-adress .adress-card .adress-card__field .adress {
+      .modal-adress .adress-card .adress-card__field .adress,
+      .modal-adress .callback-form .adress-card__field .adress,
+      .callback-modal .adress-card .adress-card__field .adress,
+      .callback-modal .callback-form .adress-card__field .adress {
         text-align: start; }
       @media screen and (max-width: 768px) {
-        .modal-adress .adress-card .adress-card__field .ifns_ajax {
+        .modal-adress .adress-card .adress-card__field .ifns_ajax,
+        .modal-adress .callback-form .adress-card__field .ifns_ajax,
+        .callback-modal .adress-card .adress-card__field .ifns_ajax,
+        .callback-modal .callback-form .adress-card__field .ifns_ajax {
           justify-content: flex-start;
           margin-bottom: 0.5em; } }
       @media screen and (max-width: 576px) {
-        .modal-adress .adress-card .adress-card__field .ifns_ajax {
+        .modal-adress .adress-card .adress-card__field .ifns_ajax,
+        .modal-adress .callback-form .adress-card__field .ifns_ajax,
+        .callback-modal .adress-card .adress-card__field .ifns_ajax,
+        .callback-modal .callback-form .adress-card__field .ifns_ajax {
           justify-content: center; } }
-    .modal-adress .adress-card .adress-card__field .image {
+    .modal-adress .adress-card .adress-card__field .image,
+    .modal-adress .callback-form .adress-card__field .image,
+    .callback-modal .adress-card .adress-card__field .image,
+    .callback-modal .callback-form .adress-card__field .image {
       padding: 0 15px;
       align-items: center;
       overflow: hidden; }
       @media screen and (max-width: 768px) {
-        .modal-adress .adress-card .adress-card__field .image {
+        .modal-adress .adress-card .adress-card__field .image,
+        .modal-adress .callback-form .adress-card__field .image,
+        .callback-modal .adress-card .adress-card__field .image,
+        .callback-modal .callback-form .adress-card__field .image {
           margin-bottom: 0.5em; } }
-      .modal-adress .adress-card .adress-card__field .image .image_wrap {
+      .modal-adress .adress-card .adress-card__field .image .image_wrap,
+      .modal-adress .callback-form .adress-card__field .image .image_wrap,
+      .callback-modal .adress-card .adress-card__field .image .image_wrap,
+      .callback-modal .callback-form .adress-card__field .image .image_wrap {
         width: 100%; }
-      .modal-adress .adress-card .adress-card__field .image img {
+      .modal-adress .adress-card .adress-card__field .image img,
+      .modal-adress .callback-form .adress-card__field .image img,
+      .callback-modal .adress-card .adress-card__field .image img,
+      .callback-modal .callback-form .adress-card__field .image img {
         display: block;
         width: 100%;
+        width: initial;
         height: auto;
         max-height: 400px;
         max-width: 100%; }
-      .modal-adress .adress-card .adress-card__field .image .slick-arrow {
+      .modal-adress .adress-card .adress-card__field .image .slick-arrow,
+      .modal-adress .callback-form .adress-card__field .image .slick-arrow,
+      .callback-modal .adress-card .adress-card__field .image .slick-arrow,
+      .callback-modal .callback-form .adress-card__field .image .slick-arrow {
         position: absolute;
         top: 50%;
         z-index: 1;
@@ -354,31 +522,87 @@ header {
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover; }
-        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-next {
+        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-next,
+        .modal-adress .callback-form .adress-card__field .image .slick-arrow.slick-next,
+        .callback-modal .adress-card .adress-card__field .image .slick-arrow.slick-next,
+        .callback-modal .callback-form .adress-card__field .image .slick-arrow.slick-next {
           right: 15px;
           transform: translateY(-50%); }
-        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-prev {
+        .modal-adress .adress-card .adress-card__field .image .slick-arrow.slick-prev,
+        .modal-adress .callback-form .adress-card__field .image .slick-arrow.slick-prev,
+        .callback-modal .adress-card .adress-card__field .image .slick-arrow.slick-prev,
+        .callback-modal .callback-form .adress-card__field .image .slick-arrow.slick-prev {
           left: 15px;
           transform: translateY(-50%) rotate(180deg); }
-    .modal-adress .adress-card .adress-card__field div.discription {
+    .modal-adress .adress-card .adress-card__field div.discription,
+    .modal-adress .callback-form .adress-card__field div.discription,
+    .callback-modal .adress-card .adress-card__field div.discription,
+    .callback-modal .callback-form .adress-card__field div.discription {
       align-items: flex-start; }
-      .modal-adress .adress-card .adress-card__field div.discription p {
+      .modal-adress .adress-card .adress-card__field div.discription p,
+      .modal-adress .callback-form .adress-card__field div.discription p,
+      .callback-modal .adress-card .adress-card__field div.discription p,
+      .callback-modal .callback-form .adress-card__field div.discription p {
         text-align: start; }
-    .modal-adress .adress-card button.button {
-      background: #3d6277;
-      border-radius: 0 0 0.7em 0.7em;
-      color: #ffffff; }
-    .modal-adress .adress-card .close-btn {
+    .modal-adress .adress-card .modal_form,
+    .modal-adress .callback-form .modal_form,
+    .callback-modal .adress-card .modal_form,
+    .callback-modal .callback-form .modal_form {
+      text-align: center; }
+      .modal-adress .adress-card .modal_form input,
+      .modal-adress .callback-form .modal_form input,
+      .callback-modal .adress-card .modal_form input,
+      .callback-modal .callback-form .modal_form input {
+        display: inline-block;
+        background: none;
+        width: 49%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid #6abf8e;
+        font-size: 1em;
+        outline: none;
+        padding: 0.2em 0.7em; }
+        @media screen and (max-width: 414px) {
+          .modal-adress .adress-card .modal_form input,
+          .modal-adress .callback-form .modal_form input,
+          .callback-modal .adress-card .modal_form input,
+          .callback-modal .callback-form .modal_form input {
+            width: 95%;
+            margin-top: 0.2rem; } }
+      .modal-adress .adress-card .modal_form button.button,
+      .modal-adress .callback-form .modal_form button.button,
+      .callback-modal .adress-card .modal_form button.button,
+      .callback-modal .callback-form .modal_form button.button {
+        background: #3d6277;
+        border-radius: 0 0 0.7em 0.7em;
+        color: #ffffff;
+        margin-top: 0.2rem; }
+    .modal-adress .adress-card .close-btn,
+    .modal-adress .callback-form .close-btn,
+    .callback-modal .adress-card .close-btn,
+    .callback-modal .callback-form .close-btn {
       position: absolute;
       top: 6px;
       right: 7px;
       cursor: pointer;
       background: #ffffff;
       border-radius: 50%; }
-      .modal-adress .adress-card .close-btn .close {
+      .modal-adress .adress-card .close-btn .close,
+      .modal-adress .callback-form .close-btn .close,
+      .callback-modal .adress-card .close-btn .close,
+      .callback-modal .callback-form .close-btn .close {
         width: 25px;
         height: 25px;
         display: block; }
+
+.callback-modal .callback-form {
+  padding: 0.5rem;
+  width: 400px; }
+  @media screen and (max-width: 576px) {
+    .callback-modal .callback-form {
+      width: 95%;
+      max-height: 90vh;
+      overflow: auto; } }
 
 * {
   margin: 0;
@@ -554,30 +778,49 @@ body {
       font-size: 2em;
       font-weight: 700;
       line-height: 1; }
-    .main-section .contact-form .form-callback {
-      margin-top: 2em;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .main-section .contact-form .form-callback input,
-      .main-section .contact-form .form-callback button {
-        width: 100%;
-        height: 40px;
-        margin: 0.3em 0;
-        border: none;
-        font-size: 1em;
-        outline: none; }
-      .main-section .contact-form .form-callback input {
-        padding: 0.2em 0.7em; }
-      .main-section .contact-form .form-callback .btn-callback {
-        background: #6abf8e;
-        color: #ffffff;
-        text-transform: uppercase;
-        font-weight: 700;
-        cursor: pointer;
-        transition: 0.5s; }
-        .main-section .contact-form .form-callback .btn-callback:hover {
-          filter: brightness(90%); }
+
+.main-section .contact-form p,
+.callback-modal .callback-form p {
+  color: #444444;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 1rem; }
+
+.main-section .contact-form .form-callback,
+.callback-modal .callback-form .form-callback {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .main-section .contact-form .form-callback input,
+  .main-section .contact-form .form-callback button,
+  .callback-modal .callback-form .form-callback input,
+  .callback-modal .callback-form .form-callback button {
+    width: 100%;
+    height: 40px;
+    margin: 0.3em 0;
+    border: none;
+    font-size: 1em;
+    outline: none; }
+  .main-section .contact-form .form-callback input,
+  .callback-modal .callback-form .form-callback input {
+    padding: 0.2em 0.7em; }
+  .main-section .contact-form .form-callback .btn-callback,
+  .callback-modal .callback-form .form-callback .btn-callback {
+    background: #6abf8e;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.5s; }
+    .main-section .contact-form .form-callback .btn-callback:hover,
+    .callback-modal .callback-form .form-callback .btn-callback:hover {
+      filter: brightness(90%); }
+
+.callback-modal .callback-form .form-callback {
+  margin-top: 1rem; }
 
 .section {
   width: 100%; }
@@ -733,7 +976,8 @@ body {
         font-size: 0.8em; }
       .adreses-section .content .slider .slider-item a button {
         background: rgba(61, 98, 119, 0.6);
-        color: white; }
+        color: white;
+        text-transform: lowercase; }
 
 .adreses-section .section-footer {
   display: flex;
@@ -746,6 +990,9 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: 600; }
+
+.aboutus-section .content ul {
+  margin-left: 2rem; }
 
 .contacts-section .content {
   padding-bottom: 0; }

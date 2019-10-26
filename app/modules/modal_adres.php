@@ -39,7 +39,12 @@
                 <p id="description"></p>
             </div>
         </div>
-        <button class="button" id="price"></button>
+        <form action="" class="modal_form">
+            <input type="text" placeholder="ИМЯ" name="name">
+            <input type="tel" placeholder="ТЕЛЕФОН" name="phone">
+            <input type="hidden" name="theme">
+            <button class="button" id="price">оставить заявку</button>
+        </form>
         <div class="close-btn">
             <span class="close"
                 style="background: url('/app/png/close.png'); background-size: contain; background-repeat: no-repeat;"></span>

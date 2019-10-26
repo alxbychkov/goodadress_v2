@@ -22,8 +22,8 @@
                     проверок.
                 </p>
                 <div class="price-box">
-                    <p>6 месяцев - <span class="pink"> 10 000 руб</span></p>
-                    <p>11 месяцев - <span class="pink"> 13 000 руб</span></p>
+                    <!-- <p>6 месяцев - <span class="pink"> 10 000 руб</span></p> -->
+                    <p>11 месяцев - от <span class="pink"> 27 000 руб</span></p>
                     <!-- <button class="button">Заказать</button> -->
                 </div>
             </div>

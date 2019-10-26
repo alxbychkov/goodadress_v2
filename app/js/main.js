@@ -33,49 +33,29 @@ $(document).ready(function () {
             }, 1000);
         }
     });
-    $('.form-callback').submit(function (e) {
-        e.preventDefault();
-        let name = $('.form-callback').find('input[name="name"]');
-        let phone = $('.form-callback').find('input[name="phone"]');
-        if ((name.val() != "") && (phone.val() != "") && (name.val().length > 2) && (phone.val().length > 6)) {
-            name.css('border', '');
-            phone.css('border', '');
-            $.ajax({
-                url: "/app/php/mail.php",
-                type: "post",
-                data: $(this).serialize(),
-                success: function () {
-                    alert("Ваша заявка принята!");
-                },
-            });
-        } else {
-            if ((name.val() == "") || (name.val().length < 3)) {
-                name.css('border', '1px solid red');
-            } else {
-                name.css('border', '');
-            }
-            if ((phone.val() == "") || (phone.val().length < 7)) {
-                phone.css('border', '1px solid red');
-            } else {
-                phone.css('border', '');
-            }
-            return false;
-        }
-        name.val('');
-        phone.val('');
-    });
+    sendMail('.main-section .form-callback');
+    sendMail('.callback-form .form-callback', '.callback-modal');
+    sendMail('.modal_form');
     $('.form-callback').find('input').keyup(function () {
         if ($(this).val() == "") {
-            $(this).css('border', '1px solid red');
+            $(this).css('border', '1px solid #be4888');
         } else {
             $(this).css('border', '');
         }
     });
 
+    $('.tarif__btn').click(function () {
+        $('.callback-form [name=tarif]').val('');
+        let tarif = $(this).attr('data-tarif');
+        $('.callback-modal .tarif_name span').text(tarif);
+        $('[name=tarif]').val($('.callback-modal .tarif_name').text());
+        $('.callback-modal').fadeIn(300);
+    });
+
     $('[data-open=adres_show]').click(function () {
         $('#img').empty();
+        $('[type=hidden]').val('');
         // $('#img').removeClass('owl-carousel2');
-        $('.modal-adress').fadeIn(300);
         let id = $(this).data('id');
         $.ajax({
             url: "/app/php/adres_show.php",
@@ -83,7 +63,8 @@ $(document).ready(function () {
             dataType: 'json',
             data: { id: id },
             success: function (data) {
-                let full_adres = `${data[0].address} <span class="pink"> ${data[0].type} - ${data[0].square} </span>`;
+                let adres = data[0].address.split(',', 4).join();
+                let full_adres = `${data[0].address.split(',', 4).join()} <br><span class="pink"> ${data[0].type} - ${data[0].square} </span><br>(адрес неполный! номер офиса присваивается при заказе.)`;
                 $('#ifns').text(data[0].ifns);
                 $('#district').text(data[0].district);
                 $('#full-adres').html(full_adres);
@@ -103,32 +84,51 @@ $(document).ready(function () {
                 //     nextArrow: '<button type="button" class="slick-next"></button>',
                 //     lazyLoad: 'progressive'
                 // });
-                $('#price').text(data[0].price);
-                $('#img').slick('setPosition');
-                $('#img').slick('init');
+                // $('#price').text(data[0].price);
+                // $('#img').slick('setPosition');
+                // alert('LOAD IS OK');
+                $('[type=hidden]').val(data[0].address);
+
+            },
+            complete: function () {
+                // alert('LOAD IS OK');
             },
         });
+        $('.modal-adress').fadeIn(300, function () {
+            // $('#img').slick('init');
+            $('#img').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 5000,
+                arrows: true,
+                prevArrow: '<button type="button" class="slick-prev"></button>',
+                nextArrow: '<button type="button" class="slick-next"></button>',
+                lazyLoad: 'progressive'
+            });
+            // alert('FADE IN OK');
+        });
     });
-    $('#img').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 5000,
-        arrows: true,
-        prevArrow: '<button type="button" class="slick-prev"></button>',
-        nextArrow: '<button type="button" class="slick-next"></button>',
-        lazyLoad: 'progressive'
-    });
-    $('.close-btn').click(function () {
+
+    $('.modal-adress .close-btn').click(function () {
         $('.modal-adress').fadeOut(300);
         $('#img').slick('unslick');
+    });
+    $('.callback-modal .close-btn').click(function () {
+        $('.callback-modal').fadeOut(300);
     });
     $('.modal-adress').click(function () {
         $(this).fadeOut(300);
         $('#img').slick('unslick');
     });
+    $('.callback-modal').click(function () {
+        $(this).fadeOut(300);
+    });
     $('.adress-card').click(function (e) {
+        e.stopPropagation();
+    });
+    $('.callback-form').click(function (e) {
         e.stopPropagation();
     });
     $(document).keyup(function (e) {
@@ -141,3 +141,40 @@ $(document).ready(function () {
     });
 
 });
+
+function sendMail(form, close) {
+    $(form).submit(function (e) {
+        e.preventDefault();
+        let name = $(form).find('input[name="name"]');
+        let phone = $(form).find('input[name="phone"]');
+        if ((name.val() != "") && (phone.val() != "") && (name.val().length > 2) && (phone.val().length > 6)) {
+            name.css('border', '');
+            phone.css('border', '');
+            $.ajax({
+                url: "/app/php/mail.php",
+                type: "post",
+                data: $(this).serialize(),
+                success: function () {
+                    alert("Ваша заявка принята!");
+                    if (close) {
+                        $(close).fadeOut(300);
+                    }
+                },
+            });
+        } else {
+            if ((name.val() == "") || (name.val().length < 3)) {
+                name.css('border', '1px solid #be4888');
+            } else {
+                name.css('border', '');
+            }
+            if ((phone.val() == "") || (phone.val().length < 7)) {
+                phone.css('border', '1px solid #be4888');
+            } else {
+                phone.css('border', '');
+            }
+            return false;
+        }
+        name.val('');
+        phone.val('');
+    });
+}
