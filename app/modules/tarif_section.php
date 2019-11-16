@@ -17,7 +17,8 @@
                 </li>
             </ul>
             <div class="">
-                <p class="tarif__price">3 000 rub</p>
+                <p class="tarif__price">3 000&nbsp;<span class="rub"
+                        style="background: url('png/ruble.png'); background-size: cover;"></p>
                 <button class="tarif__btn button" data-tarif="МИНИ">Заказать</button>
             </div>
         </div>
@@ -35,7 +36,8 @@
                 </li>
             </ul>
             <div>
-                <p class="tarif__price">6 000 rub</p>
+                <p class="tarif__price">6 000&nbsp;<span class="rub"
+                        style="background: url('png/ruble.png'); background-size: cover;"></p>
                 <button class="tarif__btn button" data-tarif="ОПТИМАЛ">Заказать</button>
             </div>
         </div>
@@ -53,7 +55,8 @@
                 </li>
             </ul>
             <div>
-                <p class="tarif__price">9 000 rub</p>
+                <p class="tarif__price">9 000&nbsp;<span class="rub"
+                        style="background: url('png/ruble.png'); background-size: cover;"></span></p>
                 <button class="tarif__btn button" data-tarif="МАКСИ">Заказать</button>
             </div>
         </div>

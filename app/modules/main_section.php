@@ -10,8 +10,8 @@
         </div>
         <div class="contact-form col-lg-4 col-md-7 col-sm-8 col-11">
             <p>Нужен юр.адресс?</p>
-            <p>Оставь заявку</p>
-            <p>Перезвоним!</p>
+            <p>Оставьте заявку</p>
+            <p>мы Вам перезвоним!</p>
             <form class="form-callback">
                 <input type="text" name="name" placeholder="Имя">
                 <input type="text" name="phone" placeholder="Телефон">
