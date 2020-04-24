@@ -113,6 +113,13 @@
       color: #ffffff;
       padding: 0.5em 0;
       margin: 0; }
+      .modal-adress .adress-card .adress-card__head h3,
+      .modal-adress .callback-form .adress-card__head h3,
+      .callback-modal .adress-card .adress-card__head h3,
+      .callback-modal .callback-form .adress-card__head h3 {
+        padding: 0;
+        font-size: 1em;
+        font-weight: 400; }
     .modal-adress .adress-card .adress-card__head:nth-of-type(1),
     .modal-adress .callback-form .adress-card__head:nth-of-type(1),
     .callback-modal .adress-card .adress-card__head:nth-of-type(1),
@@ -280,7 +287,7 @@
         display: block; }
 
 .callback-modal .callback-form {
-  padding: 0.5rem;
+  padding: 1.5rem;
   width: 400px; }
   @media screen and (max-width: 576px) {
     .callback-modal .callback-form {
@@ -295,24 +302,28 @@ header {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Regular.ttf");
   font-weight: 400;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Medium.ttf");
   font-weight: 500;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Bold.ttf");
   font-weight: 700;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: "Cookie";
   src: url("../fonts/Cookie-Regular.ttf");
-  font-weight: 400; }
+  font-weight: 400;
+  font-display: swap; }
 
 .section-adreses {
   margin-top: 2em; }
@@ -429,6 +440,13 @@ header {
       color: #ffffff;
       padding: 0.5em 0;
       margin: 0; }
+      .modal-adress .adress-card .adress-card__head h3,
+      .modal-adress .callback-form .adress-card__head h3,
+      .callback-modal .adress-card .adress-card__head h3,
+      .callback-modal .callback-form .adress-card__head h3 {
+        padding: 0;
+        font-size: 1em;
+        font-weight: 400; }
     .modal-adress .adress-card .adress-card__head:nth-of-type(1),
     .modal-adress .callback-form .adress-card__head:nth-of-type(1),
     .callback-modal .adress-card .adress-card__head:nth-of-type(1),
@@ -596,7 +614,7 @@ header {
         display: block; }
 
 .callback-modal .callback-form {
-  padding: 0.5rem;
+  padding: 1.5rem;
   width: 400px; }
   @media screen and (max-width: 576px) {
     .callback-modal .callback-form {
@@ -748,12 +766,13 @@ body {
         .footer .navigation-min .navigation-menu .phone:hover {
           color: #be4888; }
 
+.title h1 {
+  text-align: center;
+  color: #444444; }
+
 .main-section {
   position: relative;
   margin-bottom: 5em; }
-  .main-section .title {
-    text-align: center;
-    color: #444444; }
   .main-section .row {
     justify-content: center; }
   .main-section .slider img {
@@ -779,14 +798,19 @@ body {
       font-weight: 700;
       line-height: 1; }
 
-.main-section .contact-form p,
-.callback-modal .callback-form p {
+.main-section .contact-form p, .main-section .contact-form h2,
+.callback-modal .callback-form p,
+.callback-modal .callback-form h2 {
   color: #444444;
   text-align: center;
   font-size: 1.6em;
   font-weight: 700;
   line-height: 1;
   margin-top: 1rem; }
+
+.main-section .contact-form h2,
+.callback-modal .callback-form h2 {
+  margin-top: 0; }
 
 .main-section .contact-form .form-callback,
 .callback-modal .callback-form .form-callback {
@@ -978,10 +1002,12 @@ body {
         background: rgba(61, 98, 119, 0.6);
         padding: 0 0.5em;
         font-size: 0.8em; }
-      .adreses-section .content .slider .slider-item a button {
+      .adreses-section .content .slider .slider-item a div.button {
         background: rgba(61, 98, 119, 0.6);
         color: white;
-        text-transform: lowercase; }
+        text-transform: lowercase;
+        text-align: center;
+        line-height: 1.5; }
 
 .adreses-section .section-footer {
   display: flex;
